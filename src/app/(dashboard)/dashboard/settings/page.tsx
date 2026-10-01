@@ -20,14 +20,15 @@ const providers = [
     color: 'bg-blue-500',
     scopes: ['calendar.events'],
   },
-  {
-    id: 'microsoft',
-    name: 'Microsoft Outlook',
-    description: 'Connect to Microsoft 365 / Outlook Calendar',
-    icon: Calendar,
-    color: 'bg-indigo-500',
-    scopes: ['Calendars.ReadWrite'],
-  },
+  // Microsoft OAuth disabled for now
+  // {
+  //   id: 'microsoft',
+  //   name: 'Microsoft Outlook',
+  //   description: 'Connect to Microsoft 365 / Outlook Calendar',
+  //   icon: Calendar,
+  //   color: 'bg-indigo-500',
+  //   scopes: ['Calendars.ReadWrite'],
+  // },
 ];
 
 export default function SettingsPage() {

@@ -13,7 +13,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleOAuthSignIn = (provider: 'google' | 'microsoft-entra-id') => {
+  const handleOAuthSignIn = (provider: 'google') => {
     setIsLoading(true);
     setError('');
     signIn(provider, { callbackUrl: '/dashboard' });
@@ -64,7 +64,7 @@ export default function LoginPage() {
             <CardDescription>Sign in to your account to continue</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3">
               <Button
                 variant="outline"
                 onClick={() => handleOAuthSignIn('google')}
@@ -90,20 +90,6 @@ export default function LoginPage() {
                   />
                 </svg>
                 Google
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => handleOAuthSignIn('microsoft-entra-id')}
-                disabled={isLoading}
-                className="gap-2"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M19.7 18.3c-.7.4-1.4.7-2.2.7-1.8 0-3.2-1.5-3.2-3.3 0-1.8 1.5-3.3 3.3-3.3.7 0 1.4.3 1.9.7L22 8.6c-.5-.5-1.1-.9-1.8-1.2-.5-.2-1-.3-1.6-.3-1.9 0-3.5 1.6-3.5 3.5S12.5 15 14.4 15c.6 0 1.1-.1 1.6-.3.7.3 1.3.7 2 .7 2.3 0 4.2-1.9 4.2-4.2 0-.6-.1-1.1-.2-1.7L19.7 18.3zM6.3 5.5v12.9c0 .9-.7 1.6-1.6 1.6S3.2 19.3 3.2 18.4V5.6C3.2 4.7 3.9 4 4.8 4s1.6.7 1.6 1.5zm12.4.8c0 2.4-1.9 4.4-4.3 4.4-2.4 0-4.4-1.9-4.4-4.4S12.3 2.5 14.6 2.5 19 4.4 19 6.8c0 .6-.1 1.1-.2 1.7h-1.9c.1-.8.2-1.6.2-2.5 0-1.8-1.5-3.3-3.3-3.3-1.9 0-3.4 1.5-3.4 3.3 0 1.9 1.5 3.4 3.4 3.4 1.2 0 2.3-.5 3.1-1.3l1.2 1.2c-.9.9-2.1 1.5-3.4 1.5z"
-                  />
-                </svg>
-                Microsoft
               </Button>
             </div>
 

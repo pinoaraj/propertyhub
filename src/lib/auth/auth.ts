@@ -1,7 +1,6 @@
 import NextAuth, { NextAuthConfig } from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import Google from 'next-auth/providers/google';
-import MicrosoftEntraID from 'next-auth/providers/microsoft-entra-id';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma/client';
 import { z } from 'zod';
@@ -30,16 +29,17 @@ export const authConfig: NextAuthConfig = {
         },
       },
     }),
-    MicrosoftEntraID({
-      clientId: process.env.MICROSOFT_CLIENT_ID,
-      clientSecret: process.env.MICROSOFT_CLIENT_SECRET,
-      tenantId: process.env.MICROSOFT_TENANT_ID || 'common',
-      authorization: {
-        params: {
-          scope: 'openid email profile offline_access Calendars.ReadWrite',
-        },
-      },
-    }),
+    // Microsoft OAuth disabled for now - add credentials to enable
+    // MicrosoftEntraID({
+    //   clientId: process.env.MICROSOFT_CLIENT_ID,
+    //   clientSecret: process.env.MICROSOFT_CLIENT_SECRET,
+    //   tenantId: process.env.MICROSOFT_TENANT_ID || 'common',
+    //   authorization: {
+    //     params: {
+    //       scope: 'openid email profile offline_access Calendars.ReadWrite',
+    //     },
+    //   },
+    // }),
     Credentials({
       name: 'credentials',
       credentials: {
@@ -115,7 +115,7 @@ export const authConfig: NextAuthConfig = {
     },
     async jwt({ token, user, account }) {
       if (user) {
-        token.id = user.id;
+        token.id = user.id!;
         token.role = user.role;
       }
       if (account) {
