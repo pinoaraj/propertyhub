@@ -16,7 +16,6 @@ export async function POST(req: Request) {
 
     const { messages, ticketId } = await req.json();
 
-    // Get user's connected calendars for context
     const connectedAccounts = await prisma.connectedAccount.findMany({
       where: { userId: session.user.id, isActive: true },
       select: { provider: true },
@@ -55,23 +54,36 @@ Available tools:
 - assignTicket: Assign to technician
 - listUserTickets: List user's tickets`;
 
-    const result = streamText({
+    const result = await streamText({
       model: openai('gpt-4o'),
       system: systemPrompt,
       messages,
       tools,
       maxSteps: 5,
       onFinish: async ({ response }) => {
-        // Save assistant message to chat history
         if (ticketId) {
+          const lastMessage = response.messages[response.messages.length - 1];
+          const content = typeof lastMessage?.content === 'string' ? lastMessage.content : '';
+          const toolCalls = response.messages.flatMap((m) => {
+            if (Array.isArray(m.content)) {
+              return m.content.filter((p: any) => p.type === 'tool-call').map((p: any) => ({ id: p.toolCallId, name: p.toolName, arguments: p.args }));
+            }
+            return [];
+          });
+          const toolResults = response.messages.flatMap((m) => {
+            if (Array.isArray(m.content)) {
+              return m.content.filter((p: any) => p.type === 'tool-result').map((p: any) => ({ toolCallId: p.toolCallId, name: p.toolName, result: p.result }));
+            }
+            return [];
+          });
           await prisma.chatMessage.create({
             data: {
               role: 'assistant',
-              content: response.messages[response.messages.length - 1]?.content || '',
+              content,
               userId: session.user.id,
               ticketId,
-              toolCalls: response.messages.flatMap((m) => m.toolCalls || []),
-              toolResults: response.messages.flatMap((m) => m.toolResults || []),
+              toolCalls,
+              toolResults,
             },
           });
         }

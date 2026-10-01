@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useChat } from 'ai/react';
-import { X, Send, Mic, Paperclip, Bot, User, Loader2, CheckCircle, AlertCircle, Calendar, Wrench, FileText, Zap } from 'lucide-react';
+import { X, Send, Paperclip, Bot, User, Loader2, CheckCircle, AlertCircle, Calendar, Wrench, FileText, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -29,10 +29,10 @@ interface ActionCard {
 }
 
 const quickActions = [
-  { label: 'Today\'s Agenda', prompt: 'Give me a summary of today\'s agenda', icon: Calendar },
-  { label: 'Check Availability', prompt: 'Check my calendar availability for tomorrow', icon: Zap },
-  { label: 'Create Ticket', prompt: 'Create a new maintenance ticket', icon: FileText },
-  { label: 'Schedule Visit', prompt: 'Schedule a maintenance visit', icon: Wrench },
+  { label: 'Resumen del día', prompt: 'Give me a summary of today\'s agenda', icon: Calendar },
+  { label: 'Ver disponibilidad', prompt: 'Check my calendar availability for tomorrow', icon: Zap },
+  { label: 'Crear ticket', prompt: 'Create a new maintenance ticket', icon: FileText },
+  { label: 'Agendar visita', prompt: 'Schedule a maintenance visit', icon: Wrench },
 ];
 
 export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onClose: () => void; ticketId?: string }) {
@@ -41,26 +41,21 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  const { messages, append, status, stop, setMessages } = useChat({
+  const { messages, append, isLoading, stop, setMessages } = useChat({
     api: '/api/ai/chat',
     body: { ticketId },
     onFinish: (message) => {
-      if (message.toolCalls?.length) {
-        // Check for action cards in tool results
-        const actionTool = message.toolCalls.find((tc) => tc.name === 'scheduleMaintenanceVisit' || tc.name === 'createMaintenanceTicket');
+      const toolCalls = (message as any).tool_calls || (message as any).toolCalls || [];
+      if (toolCalls.length) {
+        const actionTool = toolCalls.find((tc: any) => tc.name === 'scheduleMaintenanceVisit' || tc.name === 'createMaintenanceTicket');
         if (actionTool) {
           setActionCard({
             type: actionTool.name === 'scheduleMaintenanceVisit' ? 'confirm_event' : 'create_ticket',
-            title: actionTool.name === 'scheduleMaintenanceVisit' ? 'Confirm Calendar Event' : 'Confirm Ticket Creation',
-            description: 'Review the details before confirming',
+            title: actionTool.name === 'scheduleMaintenanceVisit' ? 'Confirmar Evento' : 'Confirmar Ticket',
+            description: 'Revisa los detalles antes de confirmar',
             data: actionTool.arguments as Record<string, unknown>,
-            onConfirm: () => {
-              // The tool already executed, just close the card
-              setActionCard(null);
-            },
-            onCancel: () => {
-              setActionCard(null);
-            },
+            onConfirm: () => setActionCard(null),
+            onCancel: () => setActionCard(null),
           });
         }
       }
@@ -80,17 +75,14 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || status === 'submitting') return;
-
     const userMessage = input;
     setInput('');
-
-    // Save user message to history
     await append({ role: 'user', content: userMessage });
   };
 
   const handleQuickAction = (prompt: string) => {
     setInput(prompt);
-    handleSubmit(new Event('submit') as React.FormEvent);
+    handleSubmit(new Event('submit') as unknown as React.FormEvent);
   };
 
   if (!isOpen) return null;
@@ -98,7 +90,6 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
   return (
     <div className="fixed right-0 top-0 z-50 h-full w-full max-w-md bg-background shadow-xl border-l animate-slide-in-right" role="dialog" aria-label="AI Assistant">
       <div className="flex h-full flex-col">
-        {/* Header */}
         <div className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-primary/10 text-primary">
@@ -106,7 +97,7 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
             </div>
             <div>
               <h3 className="font-semibold">PropertyHub Assistant</h3>
-              <p className="text-xs text-muted-foreground">AI-powered property management</p>
+              <p className="text-xs text-muted-foreground">Asistente IA para gestión de propiedades</p>
             </div>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close chat">
@@ -114,9 +105,8 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
           </Button>
         </div>
 
-        {/* Quick Actions */}
         <div className="p-4 border-b space-y-2">
-          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Quick Actions</p>
+          <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Acciones rápidas</p>
           <div className="grid grid-cols-2 gap-2">
             {quickActions.map((action) => (
               <Button
@@ -134,13 +124,12 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
           </div>
         </div>
 
-        {/* Messages */}
         <ScrollArea className="flex-1 p-4 space-y-4" ref={scrollAreaRef}>
           {messages.length === 0 && (
             <div className="text-center text-muted-foreground py-8">
               <Bot className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p className="text-sm">How can I help you today?</p>
-              <p className="text-xs mt-1">Try asking about your schedule, creating tickets, or checking availability.</p>
+              <p className="text-sm">¿Cómo puedo ayudarte hoy?</p>
+              <p className="text-xs mt-1">Pregunta sobre tu agenda, crea tickets o verifica disponibilidad.</p>
             </div>
           )}
           {messages.map((message) => (
@@ -150,28 +139,20 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
           <div ref={messagesEndRef} />
         </ScrollArea>
 
-        {/* Action Card */}
         {actionCard && (
           <ActionCardComponent card={actionCard} onClose={() => setActionCard(null)} />
         )}
 
-        {/* Input */}
         <div className="p-4 border-t bg-background/50 backdrop-blur">
           <form onSubmit={handleSubmit} className="flex items-end gap-2">
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              className="h-10 w-10 shrink-0"
-              aria-label="Attach file"
-            >
+            <Button type="button" variant="ghost" size="icon" className="h-10 w-10 shrink-0" aria-label="Attach file">
               <Paperclip className="h-5 w-5" />
             </Button>
             <div className="flex-1 relative">
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask me anything..."
+                placeholder="Pregúntame lo que sea..."
                 className="pr-12"
                 disabled={status === 'submitting'}
                 onKeyDown={(e) => {
@@ -193,7 +174,7 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
             </Button>
           </form>
           <p className="text-xs text-muted-foreground text-center mt-2">
-            Powered by AI • {'Press Enter to send, Shift+Enter for new line'}
+            Powered by AI • {'Presiona Enter para enviar'}
           </p>
         </div>
       </div>
@@ -268,7 +249,7 @@ function ToolResultBadge({ name, result, error }: { name: string; result: unknow
   return (
     <div className="inline-flex items-center gap-1.5 px-2 py-1 text-xs bg-green-500/10 text-green-600 rounded-full">
       <CheckCircle className="h-3 w-3" />
-      <span>Completed</span>
+      <span>Completado</span>
     </div>
   );
 }
@@ -312,8 +293,8 @@ function ActionCardComponent({ card, onClose }: { card: ActionCard; onClose: () 
           ))}
         </div>
         <div className="flex gap-2 mt-4">
-          <Button variant="outline" className="flex-1" onClick={onClose}>Cancel</Button>
-          <Button className="flex-1" onClick={card.onConfirm}>Confirm</Button>
+          <Button variant="outline" className="flex-1" onClick={onClose}>Cancelar</Button>
+          <Button className="flex-1" onClick={card.onConfirm}>Confirmar</Button>
         </div>
       </CardContent>
     </Card>

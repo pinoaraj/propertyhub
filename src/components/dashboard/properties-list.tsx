@@ -21,9 +21,9 @@ interface Property {
   units: Array<{
     id: string;
     unitNumber: string;
-    rentAmount: number | string;
+    rentAmount: number | string | { toString: () => string };
     isOccupied: boolean;
-    tenant: { name: string | null; email: string | null } | null;
+    tenant: { name: string | null; email: string | null; [key: string]: any } | null;
   }>;
   _count: { units: number };
 }
@@ -106,7 +106,6 @@ export function PropertiesList({ properties }: { properties: Property[] }) {
                 </div>
               </div>
 
-              {/* Units Preview */}
               {property.units.length > 0 && (
                 <div className="mt-4">
                   <div className="flex items-center justify-between mb-2">
@@ -149,8 +148,8 @@ export function PropertiesList({ properties }: { properties: Property[] }) {
                       </div>
                     )}
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         );

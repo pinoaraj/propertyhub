@@ -1,5 +1,6 @@
 import { generateStructuredJson, isAIConfigured } from './client';
 import { createAuditLogEntry } from '@/lib/db/repositories';
+import { z } from 'zod';
 import {
   maintenanceTicketSchema,
   scheduleVisitSchema,
@@ -348,12 +349,12 @@ export async function getTicketDetailsWithAI(ticketId: string): Promise<TicketDe
       unitNumber: ticket.unit.unitNumber,
       property: ticket.unit.property.name,
       tenant: ticket.unit.tenant
-        ? { name: ticket.unit.tenant.name, email: ticket.unit.tenant.email }
+        ? { name: ticket.unit.tenant.name || '', email: ticket.unit.tenant.email }
         : null,
     },
-    reportedBy: ticket.reportedBy.name,
+    reportedBy: ticket.reportedBy.name || '',
     assignedTo: ticket.assignedTo
-      ? { name: ticket.assignedTo.name, email: ticket.assignedTo.email }
+      ? { name: ticket.assignedTo.name || '', email: ticket.assignedTo.email }
       : null,
     scheduledAt: ticket.scheduledAt?.toISOString() || null,
     estimatedCost: ticket.estimatedCost?.toString() || null,
@@ -372,7 +373,7 @@ export async function checkAvailabilityWithAI(
   provider?: 'GOOGLE' | 'MICROSOFT'
 ): Promise<AvailabilityOutput> {
   const providers = provider
-    ? [await getCalendarProvider(userId, provider)].filter(Boolean)
+    ? [await getCalendarProvider(userId, provider)].filter((p): p is NonNullable<typeof p> => p !== null)
     : await getAllCalendarProviders(userId);
 
   const allSlots: any[] = [];

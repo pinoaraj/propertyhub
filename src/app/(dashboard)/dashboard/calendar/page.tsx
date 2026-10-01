@@ -35,7 +35,6 @@ export default async function CalendarPage() {
     where: {
       assigneeId: session.user.id,
       calendarEventId: { not: null },
-      dueDate: { not: null },
     },
     include: {
       ticket: { include: { unit: { include: { property: true } } } },

@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, Bell, Search, Sun, Moon, User, LogOut } from 'lucide-react';
+import { Menu, Bell, Search, Sun, Moon, User, LogOut, LayoutDashboard, Building2, Home, Wrench, Calendar, Users, MessageSquare, Settings } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -16,6 +16,8 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { getInitials } from '@/lib/utils';
 import { useState } from 'react';
+import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 
 interface DashboardHeaderProps {
   user: {
@@ -150,8 +152,3 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
     </header>
   );
 }
-
-// Need to import these icons
-import { LayoutDashboard, Building2, Home, Wrench, Calendar, Users, MessageSquare, Bell, Settings } from 'lucide-react';
-import { signOut } from 'next-auth/react';
-import Link from 'next/link';

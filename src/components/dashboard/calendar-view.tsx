@@ -5,7 +5,7 @@ import { formatDateTime, formatDate } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Wrench, Calendar, CheckCircle, Clock, MapPin, User, AlertTriangle, ChevronLeft, ChevronRight, Today, Plus } from 'lucide-react';
+import { Wrench, Calendar, CheckCircle, Clock, MapPin, User, AlertTriangle, ChevronLeft, ChevronRight, Sun, Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -43,7 +43,7 @@ export function CalendarView({
         id: t.id,
         title: t.title,
         start: t.scheduledAt,
-        end: new Date(new Date(t.scheduledAt).getTime() + 60 * 60 * 1000), // 1 hour default
+        end: new Date(new Date(t.scheduledAt).getTime() + 60 * 60 * 1000),
         type: 'ticket' as const,
         unit: `Unit ${t.unit.unitNumber}`,
         property: t.unit.property.name,
@@ -84,20 +84,17 @@ export function CalendarView({
     const month = date.getMonth();
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
-    const startDay = firstDay.getDay(); // 0 = Sunday
+    const startDay = firstDay.getDay();
     const daysInMonth = lastDay.getDate();
 
     const days = [];
-    // Previous month days
     const prevMonthLastDay = new Date(year, month, 0).getDate();
     for (let i = startDay - 1; i >= 0; i--) {
       days.push({ date: new Date(year, month - 1, prevMonthLastDay - i), isCurrentMonth: false });
     }
-    // Current month days
     for (let i = 1; i <= daysInMonth; i++) {
       days.push({ date: new Date(year, month, i), isCurrentMonth: true });
     }
-    // Next month days to fill grid
     const totalCells = Math.ceil((days.length) / 7) * 7;
     for (let i = days.length; i < totalCells; i++) {
       days.push({ date: new Date(year, month + 1, i - daysInMonth + 1), isCurrentMonth: false });
@@ -118,7 +115,6 @@ export function CalendarView({
   if (view === 'month') {
     return (
       <div className="space-y-4">
-        {/* Month Header */}
         <div className="flex items-center justify-between">
           <Button variant="outline" size="icon" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}>
             <ChevronLeft className="h-4 w-4" />
@@ -128,7 +124,7 @@ export function CalendarView({
           </h2>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" onClick={() => setCurrentDate(new Date())}>
-              <Today className="h-4 w-4 mr-2" />
+              <Sun className="h-4 w-4 mr-2" />
               Today
             </Button>
             <Button variant="outline" size="icon" onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1))}>
@@ -137,7 +133,6 @@ export function CalendarView({
           </div>
         </div>
 
-        {/* Calendar Grid */}
         <div className="grid grid-cols-7 gap-0.5">
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
             <div key={day} className="p-2 text-center text-sm font-medium text-muted-foreground">
@@ -183,7 +178,6 @@ export function CalendarView({
           })}
         </div>
 
-        {/* Connected Calendars Status */}
         {connectedProviders.length > 0 && (
           <Card>
             <CardHeader>
@@ -200,12 +194,12 @@ export function CalendarView({
                   </Badge>
                 ))}
               </div>
-            </CardContent          </Card>
+            </CardContent>
+          </Card>
         )}
       </div>
     );
   }
 
-  // Week/Day view would go here
   return <div>Week/Day view coming soon</div>;
 }

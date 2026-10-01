@@ -17,14 +17,13 @@ export const checkCalendarFreebusy = tool({
     const allSlots: Array<{ start: Date; end: Date; isAvailable: boolean; provider: string }> = [];
 
     for (const p of providers) {
-      const calProvider = await getCalendarProvider(userId, p);
+      const calProvider = await getCalendarProvider(userId, p as CalendarProvider);
       if (calProvider) {
         const slots = await calProvider.getAvailability(new Date(startDate), new Date(endDate));
         allSlots.push(...slots.map((s) => ({ ...s, provider: p })));
       }
     }
 
-    // Merge and find common available slots
     const availableSlots = allSlots.filter((s) => s.isAvailable);
     return {
       availableSlots: availableSlots.map((s) => ({
@@ -63,7 +62,6 @@ export const scheduleMaintenanceVisit = tool({
       attendees: [attendeeEmail],
     });
 
-    // Update ticket with calendar event info
     await prisma.maintenanceTicket.update({
       where: { id: ticketId },
       data: {
@@ -74,7 +72,6 @@ export const scheduleMaintenanceVisit = tool({
       },
     });
 
-    // Create ticket event
     await prisma.ticketEvent.create({
       data: {
         ticketId,
@@ -110,7 +107,6 @@ export const createMaintenanceTicket = tool({
   execute: async ({ unitNumber, issueDescription, category, priority }) => {
     const userId = 'current-user-id';
 
-    // Find unit by number
     const unit = await prisma.unit.findFirst({
       where: { unitNumber, isActive: true },
       include: { property: true },
@@ -132,7 +128,6 @@ export const createMaintenanceTicket = tool({
       include: { unit: { include: { property: true } } },
     });
 
-    // Create initial event
     await prisma.ticketEvent.create({
       data: {
         ticketId: ticket.id,
@@ -165,7 +160,6 @@ export const summarizeDailyAgenda = tool({
     const endOfDay = new Date(date);
     endOfDay.setHours(23, 59, 59, 999);
 
-    // Get calendar events from all providers
     const providers = await getAllCalendarProviders(userId);
     const calendarEvents = [];
 
@@ -181,7 +175,6 @@ export const summarizeDailyAgenda = tool({
       );
     }
 
-    // Get pending tasks
     const tasks = await prisma.task.findMany({
       where: {
         assigneeId: userId,
@@ -193,7 +186,6 @@ export const summarizeDailyAgenda = tool({
       },
     });
 
-    // Get open tickets assigned to user
     const tickets = await prisma.maintenanceTicket.findMany({
       where: {
         assignedToId: userId,

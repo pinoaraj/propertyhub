@@ -32,10 +32,10 @@ interface Ticket {
   unit: {
     unitNumber: string;
     property: { name: string };
-    tenant: { id: string; name: string; email: string; phone: string | null } | null;
+    tenant: { id: string; name: string | null; email: string } | null;
   };
   reportedBy: { id: string; name: string | null; email: string };
-  assignedTo: { id: string; name: string | null; email: string; phone: string | null } | null;
+  assignedTo: { id: string; name: string | null; email: string } | null;
   events: Array<{
     id: string;
     type: string;
@@ -142,13 +142,12 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
   };
 
   const formatCost = (cost: string | null) => {
-    if (!cost) return '—';
+    if (!cost) return '\u2014';
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(parseFloat(cost));
   };
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
@@ -189,11 +188,8 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
         </div>
       </div>
 
-      {/* Main Grid */}
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Left Column - Details */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Description */}
           <Card>
             <CardHeader>
               <CardTitle>Description</CardTitle>
@@ -212,7 +208,6 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
             </CardContent>
           </Card>
 
-          {/* Details Grid */}
           <div className="grid gap-4 sm:grid-cols-2">
             <Card>
               <CardHeader className="pb-2">
@@ -249,7 +244,8 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                 ) : (
                   <p className="capitalize">{ticket.category.toLowerCase().replace('_', ' ')}</p>
                 )}
-              </CardContent            </Card>
+              </CardContent>
+            </Card>
 
             <Card>
               <CardHeader className="pb-2">
@@ -270,7 +266,8 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                 ) : (
                   <p>{formatCost(ticket.estimatedCost)}</p>
                 )}
-              </CardContent            </Card>
+              </CardContent>
+            </Card>
 
             <Card>
               <CardHeader className="pb-2">
@@ -281,10 +278,10 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
               </CardHeader>
               <CardContent>
                 <p>{formatCost(ticket.actualCost)}</p>
-              </CardContent            </Card>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Timeline */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -333,9 +330,9 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                   />
                 )}
               </div>
-            </CardContent          </Card>
+            </CardContent>
+          </Card>
 
-          {/* Events */}
           {ticket.events.length > 0 && (
             <Card>
               <CardHeader>
@@ -359,13 +356,12 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                     </div>
                   ))}
                 </div>
-              </CardContent            </Card>
+              </CardContent>
+            </Card>
           )}
         </div>
 
-        {/* Right Column - Sidebar */}
         <div className="space-y-6">
-          {/* Assignee */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="flex items-center gap-2 text-base">
@@ -381,7 +377,6 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="">Unassigned</SelectItem>
-                    {/* Would load technicians from API */}
                   </SelectContent>
                 </Select>
               ) : ticket.assignedTo ? (
@@ -397,9 +392,9 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
               ) : (
                 <p className="text-muted-foreground">Unassigned</p>
               )}
-            </CardContent          </Card>
+            </CardContent>
+          </Card>
 
-          {/* Tenant */}
           {ticket.unit.tenant && (
             <Card>
               <CardHeader className="pb-2">
@@ -416,15 +411,13 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                   <div>
                     <p className="font-medium">{ticket.unit.tenant.name}</p>
                     <p className="text-sm text-muted-foreground">{ticket.unit.tenant.email}</p>
-                    {ticket.unit.tenant.phone && (
-                      <p className="text-sm text-muted-foreground">{ticket.unit.tenant.phone}</p>
-                    )}
+                    
                   </div>
                 </div>
-              </CardContent            </Card>
+              </CardContent>
+            </Card>
           )}
 
-          {/* Status Actions */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-base">Quick Actions</CardTitle>
@@ -458,11 +451,11 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
                   )}
                 </>
               )}
-            </CardContent          </Card>
+            </CardContent>
+          </Card>
         </div>
       </div>
 
-      {/* Edit Dialog */}
       <Dialog open={isEditing} onOpenChange={setIsEditing}>
         <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
@@ -490,18 +483,26 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
               <div className="space-y-2">
                 <Label>Category</Label>
                 <Select value={editForm.category} onValueChange={(v) => setEditForm(prev => ({ ...prev, category: v }))}>
-                  <SelectTrigger><SelectValue placeholder="Select category" /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
                   <SelectContent>
-                    {categories.map(cat => <SelectItem key={cat} value={cat}>{cat}</SelectItem>)}
+                    {categories.map(cat => (
+                      <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
               <div className="space-y-2">
                 <Label>Priority</Label>
                 <Select value={editForm.priority} onValueChange={(v) => setEditForm(prev => ({ ...prev, priority: v }))}>
-                  <SelectTrigger><SelectValue placeholder="Select priority" /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select priority" />
+                  </SelectTrigger>
                   <SelectContent>
-                    {priorities.map(p => <SelectItem key={p} value={p}>{p}</SelectItem>)}
+                    {priorities.map(p => (
+                      <SelectItem key={p} value={p}>{p}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -510,9 +511,13 @@ export function TicketDetailClient({ initialTicket, currentUserId, currentUserRo
               <div className="space-y-2">
                 <Label>Status</Label>
                 <Select value={editForm.status} onValueChange={(v) => setEditForm(prev => ({ ...prev, status: v }))}>
-                  <SelectTrigger><SelectValue placeholder="Select status" /></SelectTrigger>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select status" />
+                  </SelectTrigger>
                   <SelectContent>
-                    {statuses.map(s => <SelectItem key={s} value={s}>{s.replace('_', ' ')}</SelectItem>)}
+                    {statuses.map(s => (
+                      <SelectItem key={s} value={s}>{s.replace('_', ' ')}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>

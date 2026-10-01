@@ -58,6 +58,7 @@ model User {
   emailVerified     DateTime?
   name              String?
   image             String?
+  password          String?
   role              UserRole           @default(TENANT)
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @updatedAt
@@ -209,6 +210,7 @@ model MaintenanceTicket {
   assignedTo  User?             @relation("AssignedTechnician", fields: [assignedToId], references: [id])
   events      TicketEvent[]
   chatMessages ChatMessage[]
+  tasks       Task[]
 
   @@index([unitId])
   @@index([reportedById])
