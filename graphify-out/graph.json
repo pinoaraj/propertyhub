@@ -1,0 +1,175 @@
+{
+  "nodes": [
+    {
+      "id": "user",
+      "label": "User",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "Core user entity with roles: ADMIN, PROPERTY_MANAGER, TENANT, SERVICE_TECH"
+    },
+    {
+      "id": "property",
+      "label": "Property",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "Property entity with address, manager, and units"
+    },
+    {
+      "id": "unit",
+      "label": "Unit",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "Rental unit within a property"
+    },
+    {
+      "id": "maintenance-ticket",
+      "label": "MaintenanceTicket",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "Maintenance request with status workflow"
+    },
+    {
+      "id": "task",
+      "label": "Task",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "Operational task with due date"
+    },
+    {
+      "id": "connected-account",
+      "label": "ConnectedAccount",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "OAuth tokens for Google/Microsoft calendar"
+    },
+    {
+      "id": "chat-message",
+      "label": "ChatMessage",
+      "type": "model",
+      "file": "prisma/schema.prisma",
+      "description": "AI assistant conversation history"
+    },
+    {
+      "id": "auth",
+      "label": "Auth (NextAuth)",
+      "type": "service",
+      "file": "src/lib/auth/auth.ts",
+      "description": "NextAuth v5 with Google + Microsoft OAuth, refresh tokens"
+    },
+    {
+      "id": "calendar-service",
+      "label": "CalendarService",
+      "type": "service",
+      "file": "src/lib/calendar/providers.ts",
+      "description": "Unified calendar abstraction for Google + Microsoft"
+    },
+    {
+      "id": "ai-tools",
+      "label": "AI Tools",
+      "type": "service",
+      "file": "src/lib/ai/tools.ts",
+      "description": "8 function calling tools for AI assistant"
+    },
+    {
+      "id": "ai-services",
+      "label": "AI Services",
+      "type": "service",
+      "file": "src/lib/ai/services.ts",
+      "description": "AI services with structured outputs (Zod)"
+    },
+    {
+      "id": "ai-client",
+      "label": "AI Client",
+      "type": "service",
+      "file": "src/lib/ai/client.ts",
+      "description": "AI SDK v3 client with generateObject"
+    },
+    {
+      "id": "chat-drawer",
+      "label": "Chat Drawer",
+      "type": "component",
+      "file": "src/components/chat/chat-drawer.tsx",
+      "description": "Conversational AI assistant sidebar"
+    },
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/page.tsx",
+      "description": "Main dashboard with stats and quick actions"
+    },
+    {
+      "id": "tickets",
+      "label": "Tickets",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/tickets/page.tsx",
+      "description": "Ticket list with filters"
+    },
+    {
+      "id": "ticket-detail",
+      "label": "Ticket Detail",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
+      "description": "Ticket detail with timeline and actions"
+    },
+    {
+      "id": "calendar-page",
+      "label": "Calendar",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/calendar/page.tsx",
+      "description": "Calendar view for scheduled visits"
+    },
+    {
+      "id": "properties",
+      "label": "Properties",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/properties/page.tsx",
+      "description": "Property list with occupancy stats"
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "type": "page",
+      "file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "description": "Calendar connections and AI settings"
+    },
+    {
+      "id": "prisma-client",
+      "label": "Prisma Client",
+      "type": "service",
+      "file": "src/lib/prisma/client.ts",
+      "description": "Prisma client singleton"
+    },
+    {
+      "id": "repositories",
+      "label": "Repositories",
+      "type": "service",
+      "file": "src/lib/db/repositories/",
+      "description": "Repository pattern for DB access"
+    }
+  ],
+  "edges": [
+    { "from": "user", "to": "property", "label": "manages" },
+    { "from": "user", "to": "unit", "to": "unit", "label": "rents" },
+    { "from": "user", "to": "maintenance-ticket", "label": "creates" },
+    { "from": "user", "to": "task", "label": "assigned" },
+    { "from": "user", "to": "connected-account", "label": "has" },
+    { "from": "user", "to": "chat-message", "label": "sends" },
+    { "from": "property", "to": "unit", "label": "contains" },
+    { "from": "unit", "to": "maintenance-ticket", "label": "has" },
+    { "from": "maintenance-ticket", "to": "task", "label": "generates" },
+    { "from": "maintenance-ticket", "to": "chat-message", "label": "context" },
+    { "from": "auth", "to": "user", "label": "authenticates" },
+    { "from": "auth", "to": "connected-account", "label": "stores tokens" },
+    { "from": "calendar-service", "to": "connected-account", "label": "uses" },
+    { "from": "ai-tools", "to": "calendar-service", "label": "calls" },
+    { "from": "ai-tools", "to": "prisma-client", "label": "queries" },
+    { "from": "ai-services", "to": "ai-client", "label": "uses" },
+    { "from": "ai-services", "to": "calendar-service", "label": "uses" },
+    { "from": "chat-drawer", "to": "ai-tools", "label": "triggers" },
+    { "from": "dashboard", "to": "tickets", "label": "links" },
+    { "from": "dashboard", "to": "properties", "label": "links" },
+    { "from": "dashboard", "to": "calendar-page", "label": "links" },
+    { "from": "repositories", "to": "prisma-client", "label": "uses" }
+  ]
+}
