@@ -18,7 +18,7 @@ export interface CalendarCredentials {
   calendarId?: string;
 }
 
-function isTokenExpired(tokenExpiry?: Date): boolean {
+function isTokenExpired(tokenExpiry?: Date | null): boolean {
   if (!tokenExpiry) return true;
   return new Date() >= new Date(tokenExpiry.getTime() - 5 * 60 * 1000); // 5 min buffer
 }
@@ -338,8 +338,8 @@ export async function getCalendarProvider(
 
   const credentials: CalendarCredentials = {
     accessToken,
-    refreshToken: connectedAccount.refreshToken,
-    tokenExpiry,
+    refreshToken: connectedAccount.refreshToken || undefined,
+    tokenExpiry: tokenExpiry || undefined,
     calendarId: connectedAccount.calendarId || undefined,
   };
 

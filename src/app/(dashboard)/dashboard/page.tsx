@@ -76,7 +76,7 @@ export default async function DashboardPage() {
           { label: 'Occupancy', value: `${occupancyRate}%`, icon: 'Users', trend: occupancyRate >= 90 ? 'up' : occupancyRate >= 70 ? 'neutral' : 'down' },
           { label: 'Open Tickets', value: openTickets, icon: 'Wrench', trend: openTickets > 10 ? 'up' : 'down' },
           { label: 'Urgent Tickets', value: urgentTickets, icon: 'AlertTriangle', trend: urgentTickets > 0 ? 'up' : 'down', urgent: urgentTickets > 0 },
-          { label: 'My Tasks', value: upcomingTasks.length, icon: 'CheckSquare', trend: null },
+          { label: 'My Tasks', value: upcomingTasks, icon: 'CheckSquare', trend: null },
         ]}
       />
 

@@ -6,14 +6,16 @@ import type { CalendarProvider } from '@/types';
 
 export const checkCalendarFreebusy = tool({
   description: 'Check available time slots across connected calendars (Google and/or Microsoft)',
-  parameters: z.object({
+  inputSchema: z.object({
     startDate: z.string().describe('Start date in ISO format'),
     endDate: z.string().describe('End date in ISO format'),
     provider: z.enum(['google', 'microsoft']).optional().describe('Specific provider to check (optional)'),
   }),
   execute: async ({ startDate, endDate, provider }) => {
     const userId = 'current-user-id'; // Will be injected from session
-    const providers = provider ? [provider.toUpperCase() as CalendarProvider] : ['GOOGLE', 'MICROSOFT'];
+    const providers: CalendarProvider[] = provider
+      ? [provider.toUpperCase() as CalendarProvider]
+      : ['GOOGLE', 'MICROSOFT'];
     const allSlots: Array<{ start: Date; end: Date; isAvailable: boolean; provider: string }> = [];
 
     for (const p of providers) {
@@ -24,7 +26,6 @@ export const checkCalendarFreebusy = tool({
       }
     }
 
-    // Merge and find common available slots
     const availableSlots = allSlots.filter((s) => s.isAvailable);
     return {
       availableSlots: availableSlots.map((s) => ({
@@ -39,7 +40,7 @@ export const checkCalendarFreebusy = tool({
 
 export const scheduleMaintenanceVisit = tool({
   description: 'Schedule a maintenance visit in the calendar and link it to a ticket',
-  parameters: z.object({
+  inputSchema: z.object({
     ticketId: z.string().describe('ID of the maintenance ticket'),
     startTime: z.string().describe('Start time in ISO format'),
     endTime: z.string().describe('End time in ISO format'),
@@ -63,7 +64,6 @@ export const scheduleMaintenanceVisit = tool({
       attendees: [attendeeEmail],
     });
 
-    // Update ticket with calendar event info
     await prisma.maintenanceTicket.update({
       where: { id: ticketId },
       data: {
@@ -74,7 +74,6 @@ export const scheduleMaintenanceVisit = tool({
       },
     });
 
-    // Create ticket event
     await prisma.ticketEvent.create({
       data: {
         ticketId,
@@ -90,7 +89,7 @@ export const scheduleMaintenanceVisit = tool({
 
 export const createMaintenanceTicket = tool({
   description: 'Create a new maintenance ticket',
-  parameters: z.object({
+  inputSchema: z.object({
     unitNumber: z.string().describe('Unit number (e.g., "A-101")'),
     issueDescription: z.string().describe('Detailed description of the issue'),
     category: z.enum([
@@ -110,7 +109,6 @@ export const createMaintenanceTicket = tool({
   execute: async ({ unitNumber, issueDescription, category, priority }) => {
     const userId = 'current-user-id';
 
-    // Find unit by number
     const unit = await prisma.unit.findFirst({
       where: { unitNumber, isActive: true },
       include: { property: true },
@@ -132,7 +130,6 @@ export const createMaintenanceTicket = tool({
       include: { unit: { include: { property: true } } },
     });
 
-    // Create initial event
     await prisma.ticketEvent.create({
       data: {
         ticketId: ticket.id,
@@ -154,7 +151,7 @@ export const createMaintenanceTicket = tool({
 
 export const summarizeDailyAgenda = tool({
   description: 'Get a summary of today\'s agenda including calendar events and pending tasks',
-  parameters: z.object({
+  inputSchema: z.object({
     targetDate: z.string().optional().describe('Date in ISO format (defaults to today)'),
   }),
   execute: async ({ targetDate }) => {
@@ -165,7 +162,6 @@ export const summarizeDailyAgenda = tool({
     const endOfDay = new Date(date);
     endOfDay.setHours(23, 59, 59, 999);
 
-    // Get calendar events from all providers
     const providers = await getAllCalendarProviders(userId);
     const calendarEvents = [];
 
@@ -181,7 +177,6 @@ export const summarizeDailyAgenda = tool({
       );
     }
 
-    // Get pending tasks
     const tasks = await prisma.task.findMany({
       where: {
         assigneeId: userId,
@@ -193,7 +188,6 @@ export const summarizeDailyAgenda = tool({
       },
     });
 
-    // Get open tickets assigned to user
     const tickets = await prisma.maintenanceTicket.findMany({
       where: {
         assignedToId: userId,
@@ -227,7 +221,7 @@ export const summarizeDailyAgenda = tool({
 
 export const getTicketDetails = tool({
   description: 'Get detailed information about a maintenance ticket',
-  parameters: z.object({
+  inputSchema: z.object({
     ticketId: z.string().describe('ID of the maintenance ticket'),
   }),
   execute: async ({ ticketId }) => {
@@ -272,7 +266,7 @@ export const getTicketDetails = tool({
 
 export const updateTicketStatus = tool({
   description: 'Update the status of a maintenance ticket',
-  parameters: z.object({
+  inputSchema: z.object({
     ticketId: z.string().describe('ID of the maintenance ticket'),
     status: z.enum(['PENDING', 'ASSIGNED', 'IN_PROGRESS', 'RESOLVED', 'CLOSED']),
     note: z.string().optional().describe('Optional note about the status change'),
@@ -305,7 +299,7 @@ export const updateTicketStatus = tool({
 
 export const assignTicket = tool({
   description: 'Assign a maintenance ticket to a technician',
-  parameters: z.object({
+  inputSchema: z.object({
     ticketId: z.string().describe('ID of the maintenance ticket'),
     technicianId: z.string().describe('ID of the technician to assign'),
   }),
@@ -330,7 +324,7 @@ export const assignTicket = tool({
 
 export const listUserTickets = tool({
   description: 'List tickets for the current user (created or assigned)',
-  parameters: z.object({
+  inputSchema: z.object({
     status: z.enum(['PENDING', 'ASSIGNED', 'IN_PROGRESS', 'RESOLVED', 'CLOSED']).optional(),
     limit: z.number().default(10),
   }),

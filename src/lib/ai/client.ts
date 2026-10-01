@@ -10,7 +10,7 @@ interface GenerateStructuredInput<TSchema extends z.ZodTypeAny> {
   schema: TSchema;
   model?: string;
   temperature?: number;
-  maxTokens?: number;
+  maxOutputTokens?: number;
   systemPrompt?: string;
 }
 
@@ -23,7 +23,7 @@ export async function generateStructuredJson<TSchema extends z.ZodTypeAny>({
   schema,
   model = DEFAULT_MODEL,
   temperature = 0.2,
-  maxTokens = 2000,
+  maxOutputTokens = 2000,
   systemPrompt,
 }: GenerateStructuredInput<TSchema>): Promise<z.infer<TSchema>> {
   const result = await generateObject({
@@ -32,7 +32,7 @@ export async function generateStructuredJson<TSchema extends z.ZodTypeAny>({
     prompt,
     system: systemPrompt,
     temperature,
-    maxTokens,
+    maxOutputTokens,
   });
 
   return result.object;
@@ -47,14 +47,14 @@ export async function generateChatResponse({
   systemPrompt,
   model = DEFAULT_MODEL,
   temperature = 0.3,
-  maxTokens = 2000,
+  maxOutputTokens = 2000,
 }: {
   messages: Array<{ role: string; content: string }>;
   tools?: any;
   systemPrompt?: string;
   model?: string;
   temperature?: number;
-  maxTokens?: number;
+  maxOutputTokens?: number;
 }): Promise<ChatResponseOutput> {
   const result = await generateObject({
     model: openai(model),
@@ -76,7 +76,7 @@ export async function generateChatResponse({
     prompt: messages.map(m => `${m.role}: ${m.content}`).join('\n'),
     system: systemPrompt,
     temperature,
-    maxTokens,
+    maxOutputTokens,
   });
 
   return result.object;

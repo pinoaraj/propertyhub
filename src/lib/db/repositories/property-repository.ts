@@ -1,5 +1,4 @@
 import { prisma } from '@/lib/prisma/client';
-import type { Property, Unit } from '@/types';
 
 export interface CreatePropertyInput {
   name: string;

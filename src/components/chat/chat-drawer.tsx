@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useChat } from 'ai/react';
 import { X, Send, Mic, Paperclip, Bot, User, Loader2, CheckCircle, AlertCircle, Calendar, Wrench, FileText, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -38,34 +37,10 @@ const quickActions = [
 export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onClose: () => void; ticketId?: string }) {
   const [input, setInput] = useState('');
   const [actionCard, setActionCard] = useState<ActionCard | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'streaming'>('idle');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-
-  const { messages, append, status, stop, setMessages } = useChat({
-    api: '/api/ai/chat',
-    body: { ticketId },
-    onFinish: (message) => {
-      if (message.toolCalls?.length) {
-        // Check for action cards in tool results
-        const actionTool = message.toolCalls.find((tc) => tc.name === 'scheduleMaintenanceVisit' || tc.name === 'createMaintenanceTicket');
-        if (actionTool) {
-          setActionCard({
-            type: actionTool.name === 'scheduleMaintenanceVisit' ? 'confirm_event' : 'create_ticket',
-            title: actionTool.name === 'scheduleMaintenanceVisit' ? 'Confirm Calendar Event' : 'Confirm Ticket Creation',
-            description: 'Review the details before confirming',
-            data: actionTool.arguments as Record<string, unknown>,
-            onConfirm: () => {
-              // The tool already executed, just close the card
-              setActionCard(null);
-            },
-            onCancel: () => {
-              setActionCard(null);
-            },
-          });
-        }
-      }
-    },
-  });
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -79,18 +54,86 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || status === 'submitting') return;
+    if (!input.trim() || status === 'submitting' || status === 'streaming') return;
 
     const userMessage = input;
-    setInput('');
+    const tempId = `temp-${Date.now()}`;
+    const newUserMessage: ChatMessage = {
+      id: tempId,
+      role: 'user',
+      content: userMessage,
+      createdAt: new Date(),
+    };
 
-    // Save user message to history
-    await append({ role: 'user', content: userMessage });
+    setMessages(prev => [...prev, newUserMessage]);
+    setInput('');
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [...messages, newUserMessage], ticketId }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+      let assistantContent = '';
+      let assistantId = `assistant-${Date.now()}`;
+      let currentMessage: ChatMessage = {
+        id: assistantId,
+        role: 'assistant',
+        content: '',
+        createdAt: new Date(),
+      };
+
+      setMessages(prev => [...prev, currentMessage]);
+      setStatus('streaming');
+
+      while (reader) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n').filter(line => line.trim());
+
+        for (const line of lines) {
+          if (line.startsWith('0:')) {
+            // Text chunk
+            const text = line.slice(2);
+            assistantContent += text;
+            setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content: assistantContent } : m));
+          } else if (line.startsWith('8:')) {
+            // Tool calls/results
+            try {
+              const data = JSON.parse(line.slice(2));
+              if (data.toolCalls) {
+                setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, toolCalls: data.toolCalls } : m));
+              }
+              if (data.toolResults) {
+                setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, toolResults: data.toolResults } : m));
+              }
+            } catch {}
+          }
+        }
+      }
+
+      // Update final message
+      setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content: assistantContent } : m));
+      setStatus('idle');
+    } catch (error) {
+      console.error('Chat error:', error);
+      setStatus('idle');
+      // Remove the user message on error
+      setMessages(prev => prev.filter(m => m.id !== tempId));
+    }
   };
 
   const handleQuickAction = (prompt: string) => {
     setInput(prompt);
-    handleSubmit(new Event('submit') as React.FormEvent);
+    handleSubmit({ preventDefault: () => {}, currentTarget: document.createElement('form') } as unknown as React.FormEvent);
   };
 
   if (!isOpen) return null;
@@ -125,7 +168,7 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
                 size="sm"
                 className="h-auto py-2 px-3 justify-start gap-2 text-xs"
                 onClick={() => handleQuickAction(action.prompt)}
-                disabled={status === 'submitting'}
+                disabled={status === 'submitting' || status === 'streaming'}
               >
                 <action.icon className="h-3.5 w-3.5" />
                 <span className="truncate">{action.label}</span>
@@ -144,7 +187,7 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
             </div>
           )}
           {messages.map((message) => (
-            <MessageBubble key={message.id} message={message as ChatMessage} />
+            <MessageBubble key={message.id} message={message} />
           ))}
           {status === 'streaming' && <TypingIndicator />}
           <div ref={messagesEndRef} />
@@ -173,7 +216,7 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask me anything..."
                 className="pr-12"
-                disabled={status === 'submitting'}
+                disabled={status === 'submitting' || status === 'streaming'}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
@@ -186,10 +229,14 @@ export function ChatDrawer({ isOpen, onClose, ticketId }: { isOpen: boolean; onC
               type="submit"
               size="icon"
               className="h-10 w-10 shrink-0"
-              disabled={!input.trim() || status === 'submitting'}
+              disabled={!input.trim() || status === 'submitting' || status === 'streaming'}
               aria-label="Send message"
             >
-              {status === 'submitting' ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
+              {(status === 'submitting' || status === 'streaming') ? (
+                <Loader2 className="h-5 w-5 animate-spin" />
+              ) : (
+                <Send className="h-5 w-5" />
+              )}
             </Button>
           </form>
           <p className="text-xs text-muted-foreground text-center mt-2">

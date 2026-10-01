@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import { Calendar, CheckCircle, AlertCircle, Loader2, ExternalLink, RefreshCw, Disconnect } from 'lucide-react';
+import { Calendar, CheckCircle, AlertCircle, Loader2, ExternalLink, RefreshCw, Unlink, Bot, Bell } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
@@ -34,13 +34,6 @@ export default function SettingsPage() {
   const { data: session, update } = useSession();
   const [syncing, setSyncing] = useState<string | null>(null);
   const [connected, setConnected] = useState<Record<string, boolean>>({});
-
-  // In a real app, fetch connected accounts from API
-  // For now, we'll check from session
-  const checkConnections = () => {
-    // This would come from the session or a separate API call
-    // For demo, we'll simulate
-  };
 
   const handleConnect = async (providerId: string) => {
     setSyncing(providerId);
@@ -156,7 +149,7 @@ export default function SettingsPage() {
                         disabled={isSyncingProvider}
                         className="gap-1"
                       >
-                        <Disconnect className="h-4 w-4" />
+                        <Unlink className="h-4 w-4" />
                         Disconnect
                       </Button>
                     </>
@@ -268,10 +261,8 @@ export default function SettingsPage() {
               />
             </div>
           ))}
-        </CardContent      </Card>
+        </CardContent>
+      </Card>
     </div>
   );
 }
-
-// Need to import missing icons
-import { Bot, Bell } from 'lucide-react';

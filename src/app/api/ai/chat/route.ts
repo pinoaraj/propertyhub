@@ -60,25 +60,35 @@ Available tools:
       system: systemPrompt,
       messages,
       tools,
-      maxSteps: 5,
       onFinish: async ({ response }) => {
         // Save assistant message to chat history
         if (ticketId) {
+          const lastMessage = response.messages[response.messages.length - 1];
+          let content = '';
+          if (lastMessage?.content) {
+            if (Array.isArray(lastMessage.content)) {
+              content = lastMessage.content
+                .filter(c => c.type === 'text')
+                .map(c => c.text)
+                .join('');
+            } else {
+              content = lastMessage.content;
+            }
+          }
           await prisma.chatMessage.create({
             data: {
               role: 'assistant',
-              content: response.messages[response.messages.length - 1]?.content || '',
+              content,
               userId: session.user.id,
               ticketId,
-              toolCalls: response.messages.flatMap((m) => m.toolCalls || []),
-              toolResults: response.messages.flatMap((m) => m.toolResults || []),
+              // toolCalls and toolResults not available in new API structure
             },
           });
         }
       },
     });
 
-    return result.toDataStreamResponse();
+    return result.toTextStreamResponse();
   } catch (error) {
     console.error('AI Chat error:', error);
     return new Response('Internal Server Error', { status: 500 });
