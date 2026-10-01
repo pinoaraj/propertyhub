@@ -4,13 +4,14 @@ import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma/client';
 import { z } from 'zod';
+import { compare } from 'bcryptjs';
 
 export const authConfig: NextAuthConfig = {
   secret: process.env.AUTH_SECRET,
   trustHost: true,
   adapter: PrismaAdapter(prisma),
   session: {
-    strategy: 'database',
+    strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, // 30 days
     updateAge: 24 * 60 * 60, // 24 hours
   },
@@ -49,24 +50,34 @@ export const authConfig: NextAuthConfig = {
         password: { label: 'Password', type: 'password' },
       },
       authorize: async (credentials) => {
-        if (!credentials?.email || !credentials?.password) {
+        try {
+          if (!credentials?.email || !credentials?.password) {
+            return null;
+          }
+
+          const { email, password } = await z
+            .object({
+              email: z.string().email(),
+              password: z.string().min(8),
+            })
+            .parseAsync(credentials);
+
+          const user = await prisma.user.findUnique({ where: { email } });
+          if (!user || !user.password) return null;
+
+          const isValid = await compare(password, user.password);
+          if (!isValid) return null;
+
+          return {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            image: user.image,
+            role: user.role,
+          };
+        } catch {
           return null;
         }
-
-        const { email, password } = await z
-          .object({
-            email: z.string().email(),
-            password: z.string().min(8),
-          })
-          .parseAsync(credentials);
-
-        // TODO: Implement password verification with bcrypt
-        // const user = await prisma.user.findUnique({ where: { email } });
-        // if (!user || !user.password) return null;
-        // const isValid = await bcrypt.compare(password, user.password);
-        // if (!isValid) return null;
-
-        return null; // Placeholder - implement password auth if needed
       },
     }),
   ],
@@ -108,10 +119,10 @@ export const authConfig: NextAuthConfig = {
       }
       return true;
     },
-    async session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
-        session.user.role = user.role;
+    async session({ session, token }) {
+      if (session.user && token) {
+        session.user.id = token.id;
+        session.user.role = token.role;
       }
       return session;
     },

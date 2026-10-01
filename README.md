@@ -7,12 +7,13 @@ AI-powered property management platform with conversational assistant, dual cale
 - **Frontend:** Next.js 14 (App Router), TypeScript, Tailwind CSS, shadcn/ui, Lucide Icons
 - **Backend:** Next.js Server Actions / API Routes, Node.js (TypeScript)
 - **Database:** PostgreSQL with Prisma ORM
-- **Auth:** NextAuth v5 (Google + Microsoft OAuth with calendar scopes + refresh tokens)
+- **Auth:** NextAuth v5 (Google OAuth with calendar scopes + email/password credentials via bcrypt)
 - **AI:** Vercel AI SDK v3 with OpenAI GPT-4o (function calling)
 - **State:** Zustand / TanStack Query
 
 ## Features
 
+- Authentication: Google OAuth sign-in, email/password sign-in, and a post-signup onboarding flow
 - Dual calendar integration (Google Calendar + Microsoft Outlook) with auto token refresh
 - Conversational AI Assistant with 8 function calling tools
 - Maintenance ticket management with full CRUD and status workflow
@@ -39,9 +40,10 @@ AI-powered property management platform with conversational assistant, dual cale
 # Database
 DATABASE_URL="postgresql://user:pass@host:5432/propertyhub"
 
-# NextAuth
-NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="generate-with-openssl-rand-base64-32"
+# NextAuth (v5)
+AUTH_SECRET="generate-with-openssl-rand-base64-32"
+# Optional: only set when trustHost is false (see auth.ts). Leave unset with trustHost:true.
+# AUTH_URL="http://localhost:3000"
 
 # Google OAuth
 GOOGLE_CLIENT_ID="xxx.apps.googleusercontent.com"
@@ -132,6 +134,7 @@ src/
 |--------|----------|-------------|
 | POST | /api/ai/chat | Streaming AI chat with tool calling |
 | POST | /api/auth/register | User registration |
+| PATCH | /api/user/me | Update current user's profile (name/role) |
 | GET | /api/tickets | List tickets |
 | POST | /api/tickets | Create ticket |
 | GET | /api/tickets/[id] | Get ticket details |
