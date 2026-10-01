@@ -6,6 +6,8 @@ import { prisma } from '@/lib/prisma/client';
 import { z } from 'zod';
 
 export const authConfig: NextAuthConfig = {
+  secret: process.env.AUTH_SECRET,
+  trustHost: true,
   adapter: PrismaAdapter(prisma),
   session: {
     strategy: 'database',
