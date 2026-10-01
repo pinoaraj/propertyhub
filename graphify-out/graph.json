@@ -1,175 +1,3825 @@
 {
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
   "nodes": [
     {
-      "id": "user",
-      "label": "User",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "Core user entity with roles: ADMIN, PROPERTY_MANAGER, TENANT, SERVICE_TECH"
+      "label": "next-env.d.ts",
+      "file_type": "code",
+      "source_file": "next-env.d.ts",
+      "source_location": "L1",
+      "id": "next_env_d_ts",
+      "community": 27,
+      "norm_label": "next-env.d.ts"
     },
     {
-      "id": "property",
-      "label": "Property",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "Property entity with address, manager, and units"
+      "label": "next.config.js",
+      "file_type": "code",
+      "source_file": "next.config.js",
+      "source_location": "L1",
+      "id": "next_config_js",
+      "community": 28,
+      "norm_label": "next.config.js"
     },
     {
-      "id": "unit",
-      "label": "Unit",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "Rental unit within a property"
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "id": "postcss_config_js",
+      "community": 29,
+      "norm_label": "postcss.config.js"
     },
     {
-      "id": "maintenance-ticket",
-      "label": "MaintenanceTicket",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "Maintenance request with status workflow"
+      "label": "tailwind.config.ts",
+      "file_type": "code",
+      "source_file": "tailwind.config.ts",
+      "source_location": "L1",
+      "id": "tailwind_config_ts",
+      "community": 30,
+      "norm_label": "tailwind.config.ts"
     },
     {
-      "id": "task",
-      "label": "Task",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "Operational task with due date"
+      "label": "vitest.config.ts",
+      "file_type": "code",
+      "source_file": "vitest.config.ts",
+      "source_location": "L1",
+      "id": "vitest_config_ts",
+      "community": 31,
+      "norm_label": "vitest.config.ts"
     },
     {
-      "id": "connected-account",
-      "label": "ConnectedAccount",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "OAuth tokens for Google/Microsoft calendar"
+      "label": "middleware.ts",
+      "file_type": "code",
+      "source_file": "src/middleware.ts",
+      "source_location": "L1",
+      "id": "src_middleware_ts",
+      "community": 32,
+      "norm_label": "middleware.ts"
     },
     {
-      "id": "chat-message",
-      "label": "ChatMessage",
-      "type": "model",
-      "file": "prisma/schema.prisma",
-      "description": "AI assistant conversation history"
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L1",
+      "id": "src_app_layout_tsx",
+      "community": 10,
+      "norm_label": "layout.tsx"
     },
     {
-      "id": "auth",
-      "label": "Auth (NextAuth)",
-      "type": "service",
-      "file": "src/lib/auth/auth.ts",
-      "description": "NextAuth v5 with Google + Microsoft OAuth, refresh tokens"
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L23",
+      "id": "app_layout_rootlayout",
+      "community": 10,
+      "norm_label": "rootlayout()"
     },
     {
-      "id": "calendar-service",
-      "label": "CalendarService",
-      "type": "service",
-      "file": "src/lib/calendar/providers.ts",
-      "description": "Unified calendar abstraction for Google + Microsoft"
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_page_tsx",
+      "community": 15,
+      "norm_label": "page.tsx"
     },
     {
-      "id": "ai-tools",
-      "label": "AI Tools",
-      "type": "service",
-      "file": "src/lib/ai/tools.ts",
-      "description": "8 function calling tools for AI assistant"
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L4",
+      "id": "app_page_home",
+      "community": 15,
+      "norm_label": "home()"
     },
     {
-      "id": "ai-services",
-      "label": "AI Services",
-      "type": "service",
-      "file": "src/lib/ai/services.ts",
-      "description": "AI services with structured outputs (Zod)"
+      "label": "providers.tsx",
+      "file_type": "code",
+      "source_file": "src/app/providers.tsx",
+      "source_location": "L1",
+      "id": "src_app_providers_tsx",
+      "community": 10,
+      "norm_label": "providers.tsx"
     },
     {
-      "id": "ai-client",
-      "label": "AI Client",
-      "type": "service",
-      "file": "src/lib/ai/client.ts",
-      "description": "AI SDK v3 client with generateObject"
+      "label": "Providers()",
+      "file_type": "code",
+      "source_file": "src/app/providers.tsx",
+      "source_location": "L6",
+      "id": "app_providers_providers",
+      "community": 10,
+      "norm_label": "providers()"
     },
     {
-      "id": "chat-drawer",
-      "label": "Chat Drawer",
-      "type": "component",
-      "file": "src/components/chat/chat-drawer.tsx",
-      "description": "Conversational AI assistant sidebar"
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/login/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_auth_login_page_tsx",
+      "community": 13,
+      "norm_label": "page.tsx"
     },
     {
-      "id": "dashboard",
-      "label": "Dashboard",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/page.tsx",
-      "description": "Main dashboard with stats and quick actions"
+      "label": "handleOAuthSignIn()",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/login/page.tsx",
+      "source_location": "L16",
+      "id": "login_page_handleoauthsignin",
+      "community": 13,
+      "norm_label": "handleoauthsignin()"
     },
     {
-      "id": "tickets",
-      "label": "Tickets",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/tickets/page.tsx",
-      "description": "Ticket list with filters"
+      "label": "handleCredentialsSignIn()",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/login/page.tsx",
+      "source_location": "L22",
+      "id": "login_page_handlecredentialssignin",
+      "community": 13,
+      "norm_label": "handlecredentialssignin()"
     },
     {
-      "id": "ticket-detail",
-      "label": "Ticket Detail",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
-      "description": "Ticket detail with timeline and actions"
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/register/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_auth_register_page_tsx",
+      "community": 14,
+      "norm_label": "page.tsx"
     },
     {
-      "id": "calendar-page",
-      "label": "Calendar",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/calendar/page.tsx",
-      "description": "Calendar view for scheduled visits"
+      "label": "handleChange()",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/register/page.tsx",
+      "source_location": "L35",
+      "id": "register_page_handlechange",
+      "community": 14,
+      "norm_label": "handlechange()"
     },
     {
-      "id": "properties",
-      "label": "Properties",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/properties/page.tsx",
-      "description": "Property list with occupancy stats"
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/register/page.tsx",
+      "source_location": "L40",
+      "id": "register_page_handlesubmit",
+      "community": 14,
+      "norm_label": "handlesubmit()"
     },
     {
-      "id": "settings",
-      "label": "Settings",
-      "type": "page",
-      "file": "src/app/(dashboard)/dashboard/settings/page.tsx",
-      "description": "Calendar connections and AI settings"
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/layout.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_layout_tsx",
+      "community": 12,
+      "norm_label": "layout.tsx"
     },
     {
-      "id": "prisma-client",
-      "label": "Prisma Client",
-      "type": "service",
-      "file": "src/lib/prisma/client.ts",
-      "description": "Prisma client singleton"
+      "label": "DashboardLayout()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/layout.tsx",
+      "source_location": "L5",
+      "id": "dashboard_layout_dashboardlayout",
+      "community": 12,
+      "norm_label": "dashboardlayout()"
     },
     {
-      "id": "repositories",
-      "label": "Repositories",
-      "type": "service",
-      "file": "src/lib/db/repositories/",
-      "description": "Repository pattern for DB access"
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_page_tsx",
+      "community": 33,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/calendar/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_calendar_page_tsx",
+      "community": 16,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "CalendarPage()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/calendar/page.tsx",
+      "source_location": "L6",
+      "id": "calendar_page_calendarpage",
+      "community": 16,
+      "norm_label": "calendarpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/properties/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_properties_page_tsx",
+      "community": 17,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "PropertiesPage()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/properties/page.tsx",
+      "source_location": "L8",
+      "id": "properties_page_propertiespage",
+      "community": 17,
+      "norm_label": "propertiespage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_settings_page_tsx",
+      "community": 0,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "handleConnect()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L39",
+      "id": "settings_page_handleconnect",
+      "community": 0,
+      "norm_label": "handleconnect()"
+    },
+    {
+      "label": "handleDisconnect()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L52",
+      "id": "settings_page_handledisconnect",
+      "community": 0,
+      "norm_label": "handledisconnect()"
+    },
+    {
+      "label": "handleSync()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L69",
+      "id": "settings_page_handlesync",
+      "community": 0,
+      "norm_label": "handlesync()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_tickets_page_tsx",
+      "community": 34,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_tickets_new_page_tsx",
+      "community": 0,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L41",
+      "id": "new_page_handlesubmit",
+      "community": 0,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "handleChange()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L81",
+      "id": "new_page_handlechange",
+      "community": 0,
+      "norm_label": "handlechange()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_dashboard_dashboard_tickets_id_page_tsx",
+      "community": 1,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "TicketDetailPage()",
+      "file_type": "code",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
+      "source_location": "L11",
+      "id": "id_page_ticketdetailpage",
+      "community": 1,
+      "norm_label": "ticketdetailpage()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/ai/chat/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_ai_chat_route_ts",
+      "community": 18,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/ai/chat/route.ts",
+      "source_location": "L9",
+      "id": "chat_route_post",
+      "community": 18,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/register/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_auth_register_route_ts",
+      "community": 19,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/register/route.ts",
+      "source_location": "L12",
+      "id": "register_route_post",
+      "community": 19,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/[...nextauth]/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_auth_nextauth_route_ts",
+      "community": 35,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/settings/calendar/disconnect/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_settings_calendar_disconnect_route_ts",
+      "community": 20,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/settings/calendar/disconnect/route.ts",
+      "source_location": "L5",
+      "id": "disconnect_route_post",
+      "community": 20,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/settings/calendar/sync/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_settings_calendar_sync_route_ts",
+      "community": 21,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/settings/calendar/sync/route.ts",
+      "source_location": "L5",
+      "id": "sync_route_post",
+      "community": 21,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_tickets_route_ts",
+      "community": 2,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L18",
+      "id": "tickets_route_post",
+      "community": 2,
+      "norm_label": "post()"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L98",
+      "id": "tickets_route_get",
+      "community": 2,
+      "norm_label": "get()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_tickets_id_route_ts",
+      "community": 2,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L20",
+      "id": "id_route_get",
+      "community": 2,
+      "norm_label": "get()"
+    },
+    {
+      "label": "PATCH()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L65",
+      "id": "id_route_patch",
+      "community": 2,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "DELETE()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L147",
+      "id": "id_route_delete",
+      "community": 2,
+      "norm_label": "delete()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/status/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_tickets_id_status_route_ts",
+      "community": 2,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "PATCH()",
+      "file_type": "code",
+      "source_file": "src/app/api/tickets/[id]/status/route.ts",
+      "source_location": "L12",
+      "id": "status_route_patch",
+      "community": 2,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/user/me/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_user_me_route_ts",
+      "community": 22,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "PATCH()",
+      "file_type": "code",
+      "source_file": "src/app/api/user/me/route.ts",
+      "source_location": "L11",
+      "id": "me_route_patch",
+      "community": 22,
+      "norm_label": "patch()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/google/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_webhooks_google_route_ts",
+      "community": 23,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/google/route.ts",
+      "source_location": "L4",
+      "id": "google_route_post",
+      "community": 23,
+      "norm_label": "post()"
+    },
+    {
+      "label": "route.ts",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/microsoft/route.ts",
+      "source_location": "L1",
+      "id": "src_app_api_webhooks_microsoft_route_ts",
+      "community": 24,
+      "norm_label": "route.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/webhooks/microsoft/route.ts",
+      "source_location": "L4",
+      "id": "microsoft_route_post",
+      "community": 24,
+      "norm_label": "post()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/forgot-password/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_forgot_password_page_tsx",
+      "community": 25,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "src/app/forgot-password/page.tsx",
+      "source_location": "L16",
+      "id": "forgot_password_page_handlesubmit",
+      "community": 25,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "onboarding-form.tsx",
+      "file_type": "code",
+      "source_file": "src/app/onboarding/onboarding-form.tsx",
+      "source_location": "L1",
+      "id": "src_app_onboarding_onboarding_form_tsx",
+      "community": 11,
+      "norm_label": "onboarding-form.tsx"
+    },
+    {
+      "label": "OnboardingForm()",
+      "file_type": "code",
+      "source_file": "src/app/onboarding/onboarding-form.tsx",
+      "source_location": "L31",
+      "id": "onboarding_onboarding_form_onboardingform",
+      "community": 11,
+      "norm_label": "onboardingform()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/onboarding/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_onboarding_page_tsx",
+      "community": 11,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "OnboardingPage()",
+      "file_type": "code",
+      "source_file": "src/app/onboarding/page.tsx",
+      "source_location": "L5",
+      "id": "onboarding_page_onboardingpage",
+      "community": 11,
+      "norm_label": "onboardingpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_privacy_page_tsx",
+      "community": 26,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "PrivacyPage()",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L8",
+      "id": "privacy_page_privacypage",
+      "community": 26,
+      "norm_label": "privacypage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/terms/page.tsx",
+      "source_location": "L1",
+      "id": "src_app_terms_page_tsx",
+      "community": 36,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "chat-drawer.tsx",
+      "file_type": "code",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L1",
+      "id": "src_components_chat_chat_drawer_tsx",
+      "community": 1,
+      "norm_label": "chat-drawer.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L75",
+      "id": "chat_chat_drawer_handlesubmit",
+      "community": 1,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "handleQuickAction()",
+      "file_type": "code",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L83",
+      "id": "chat_chat_drawer_handlequickaction",
+      "community": 1,
+      "norm_label": "handlequickaction()"
+    },
+    {
+      "label": "calendar-filters.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/calendar-filters.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_calendar_filters_tsx",
+      "community": 0,
+      "norm_label": "calendar-filters.tsx"
+    },
+    {
+      "label": "handleViewChange()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/calendar-filters.tsx",
+      "source_location": "L27",
+      "id": "dashboard_calendar_filters_handleviewchange",
+      "community": 0,
+      "norm_label": "handleviewchange()"
+    },
+    {
+      "label": "calendar-view.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_calendar_view_tsx",
+      "community": 1,
+      "norm_label": "calendar-view.tsx"
+    },
+    {
+      "label": "getEventsForDate()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L70",
+      "id": "dashboard_calendar_view_geteventsfordate",
+      "community": 1,
+      "norm_label": "geteventsfordate()"
+    },
+    {
+      "label": "getMonthDays()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L82",
+      "id": "dashboard_calendar_view_getmonthdays",
+      "community": 1,
+      "norm_label": "getmonthdays()"
+    },
+    {
+      "label": "dashboard-header.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-header.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_dashboard_header_tsx",
+      "community": 1,
+      "norm_label": "dashboard-header.tsx"
+    },
+    {
+      "label": "dashboard-layout-client.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-layout-client.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_dashboard_layout_client_tsx",
+      "community": 12,
+      "norm_label": "dashboard-layout-client.tsx"
+    },
+    {
+      "label": "DashboardLayoutClient()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-layout-client.tsx",
+      "source_location": "L10",
+      "id": "dashboard_dashboard_layout_client_dashboardlayoutclient",
+      "community": 12,
+      "norm_label": "dashboardlayoutclient()"
+    },
+    {
+      "label": "dashboard-sidebar.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-sidebar.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_dashboard_sidebar_tsx",
+      "community": 0,
+      "norm_label": "dashboard-sidebar.tsx"
+    },
+    {
+      "label": "dashboard-stats.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-stats.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_dashboard_stats_tsx",
+      "community": 0,
+      "norm_label": "dashboard-stats.tsx"
+    },
+    {
+      "label": "Icon()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/dashboard-stats.tsx",
+      "source_location": "L14",
+      "id": "dashboard_dashboard_stats_icon",
+      "community": 0,
+      "norm_label": "icon()"
+    },
+    {
+      "label": "properties-list.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/properties-list.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_properties_list_tsx",
+      "community": 1,
+      "norm_label": "properties-list.tsx"
+    },
+    {
+      "label": "quick-actions.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/quick-actions.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_quick_actions_tsx",
+      "community": 37,
+      "norm_label": "quick-actions.tsx"
+    },
+    {
+      "label": "recent-tickets.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/recent-tickets.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_recent_tickets_tsx",
+      "community": 1,
+      "norm_label": "recent-tickets.tsx"
+    },
+    {
+      "label": "ticket-detail-client.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_ticket_detail_client_tsx",
+      "community": 1,
+      "norm_label": "ticket-detail-client.tsx"
+    },
+    {
+      "label": "handleSave()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L96",
+      "id": "dashboard_ticket_detail_client_handlesave",
+      "community": 1,
+      "norm_label": "handlesave()"
+    },
+    {
+      "label": "handleStatusChange()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L126",
+      "id": "dashboard_ticket_detail_client_handlestatuschange",
+      "community": 1,
+      "norm_label": "handlestatuschange()"
+    },
+    {
+      "label": "formatCost()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L144",
+      "id": "dashboard_ticket_detail_client_formatcost",
+      "community": 1,
+      "norm_label": "formatcost()"
+    },
+    {
+      "label": "ticket-filters.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_ticket_filters_tsx",
+      "community": 0,
+      "norm_label": "ticket-filters.tsx"
+    },
+    {
+      "label": "handleStatusChange()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L38",
+      "id": "dashboard_ticket_filters_handlestatuschange",
+      "community": 0,
+      "norm_label": "handlestatuschange()"
+    },
+    {
+      "label": "handlePriorityChange()",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L46",
+      "id": "dashboard_ticket_filters_handleprioritychange",
+      "community": 0,
+      "norm_label": "handleprioritychange()"
+    },
+    {
+      "label": "tickets-list.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/tickets-list.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_tickets_list_tsx",
+      "community": 1,
+      "norm_label": "tickets-list.tsx"
+    },
+    {
+      "label": "upcoming-tasks.tsx",
+      "file_type": "code",
+      "source_file": "src/components/dashboard/upcoming-tasks.tsx",
+      "source_location": "L1",
+      "id": "src_components_dashboard_upcoming_tasks_tsx",
+      "community": 1,
+      "norm_label": "upcoming-tasks.tsx"
+    },
+    {
+      "label": "avatar.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/avatar.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_avatar_tsx",
+      "community": 0,
+      "norm_label": "avatar.tsx"
+    },
+    {
+      "label": "badge.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/badge.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_badge_tsx",
+      "community": 0,
+      "norm_label": "badge.tsx"
+    },
+    {
+      "label": "button.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/button.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_button_tsx",
+      "community": 0,
+      "norm_label": "button.tsx"
+    },
+    {
+      "label": "card.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/card.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_card_tsx",
+      "community": 0,
+      "norm_label": "card.tsx"
+    },
+    {
+      "label": "dialog.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/dialog.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_dialog_tsx",
+      "community": 0,
+      "norm_label": "dialog.tsx"
+    },
+    {
+      "label": "dropdown-menu.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/dropdown-menu.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_dropdown_menu_tsx",
+      "community": 0,
+      "norm_label": "dropdown-menu.tsx"
+    },
+    {
+      "label": "input.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/input.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_input_tsx",
+      "community": 0,
+      "norm_label": "input.tsx"
+    },
+    {
+      "label": "label.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/label.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_label_tsx",
+      "community": 0,
+      "norm_label": "label.tsx"
+    },
+    {
+      "label": "scroll-area.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/scroll-area.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_scroll_area_tsx",
+      "community": 0,
+      "norm_label": "scroll-area.tsx"
+    },
+    {
+      "label": "select.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/select.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_select_tsx",
+      "community": 0,
+      "norm_label": "select.tsx"
+    },
+    {
+      "label": "separator.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/separator.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_separator_tsx",
+      "community": 0,
+      "norm_label": "separator.tsx"
+    },
+    {
+      "label": "switch.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/switch.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_switch_tsx",
+      "community": 0,
+      "norm_label": "switch.tsx"
+    },
+    {
+      "label": "textarea.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/textarea.tsx",
+      "source_location": "L1",
+      "id": "src_components_ui_textarea_tsx",
+      "community": 0,
+      "norm_label": "textarea.tsx"
+    },
+    {
+      "label": "utils.ts",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L1",
+      "id": "src_lib_utils_ts",
+      "community": 1,
+      "norm_label": "utils.ts"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L4",
+      "id": "lib_utils_cn",
+      "community": 0,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "formatDate()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L8",
+      "id": "lib_utils_formatdate",
+      "community": 1,
+      "norm_label": "formatdate()"
+    },
+    {
+      "label": "formatTime()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L16",
+      "id": "lib_utils_formattime",
+      "community": 1,
+      "norm_label": "formattime()"
+    },
+    {
+      "label": "formatDateTime()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L24",
+      "id": "lib_utils_formatdatetime",
+      "community": 1,
+      "norm_label": "formatdatetime()"
+    },
+    {
+      "label": "getInitials()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L34",
+      "id": "lib_utils_getinitials",
+      "community": 1,
+      "norm_label": "getinitials()"
+    },
+    {
+      "label": "truncate()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L43",
+      "id": "lib_utils_truncate",
+      "community": 1,
+      "norm_label": "truncate()"
+    },
+    {
+      "label": "classNames()",
+      "file_type": "code",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L48",
+      "id": "lib_utils_classnames",
+      "community": 1,
+      "norm_label": "classnames()"
+    },
+    {
+      "label": "client.ts",
+      "file_type": "code",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L1",
+      "id": "src_lib_ai_client_ts",
+      "community": 2,
+      "norm_label": "client.ts"
+    },
+    {
+      "label": "generateStructuredJson()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L21",
+      "id": "ai_client_generatestructuredjson",
+      "community": 2,
+      "norm_label": "generatestructuredjson()"
+    },
+    {
+      "label": "generateChatResponse()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L44",
+      "id": "ai_client_generatechatresponse",
+      "community": 2,
+      "norm_label": "generatechatresponse()"
+    },
+    {
+      "label": "isAIConfigured()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L88",
+      "id": "ai_client_isaiconfigured",
+      "community": 2,
+      "norm_label": "isaiconfigured()"
+    },
+    {
+      "label": "getModelName()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L95",
+      "id": "ai_client_getmodelname",
+      "community": 2,
+      "norm_label": "getmodelname()"
+    },
+    {
+      "label": "schemas.ts",
+      "file_type": "code",
+      "source_file": "src/lib/ai/schemas.ts",
+      "source_location": "L1",
+      "id": "src_lib_ai_schemas_ts",
+      "community": 38,
+      "norm_label": "schemas.ts"
+    },
+    {
+      "label": "services.ts",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L1",
+      "id": "src_lib_ai_services_ts",
+      "community": 2,
+      "norm_label": "services.ts"
+    },
+    {
+      "label": "buildUrgencyPrompt()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L44",
+      "id": "ai_services_buildurgencyprompt",
+      "community": 2,
+      "norm_label": "buildurgencyprompt()"
+    },
+    {
+      "label": "normalizeUrgencyAssessment()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L73",
+      "id": "ai_services_normalizeurgencyassessment",
+      "community": 2,
+      "norm_label": "normalizeurgencyassessment()"
+    },
+    {
+      "label": "scoreMaintenanceUrgency()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L93",
+      "id": "ai_services_scoremaintenanceurgency",
+      "community": 2,
+      "norm_label": "scoremaintenanceurgency()"
+    },
+    {
+      "label": "createMaintenanceTicketWithAI()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L197",
+      "id": "ai_services_createmaintenanceticketwithai",
+      "community": 2,
+      "norm_label": "createmaintenanceticketwithai()"
+    },
+    {
+      "label": "scheduleMaintenanceVisitWithAI()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L233",
+      "id": "ai_services_schedulemaintenancevisitwithai",
+      "community": 2,
+      "norm_label": "schedulemaintenancevisitwithai()"
+    },
+    {
+      "label": "getDailyAgendaWithAI()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L273",
+      "id": "ai_services_getdailyagendawithai",
+      "community": 3,
+      "norm_label": "getdailyagendawithai()"
+    },
+    {
+      "label": "getTicketDetailsWithAI()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L326",
+      "id": "ai_services_getticketdetailswithai",
+      "community": 2,
+      "norm_label": "getticketdetailswithai()"
+    },
+    {
+      "label": "checkAvailabilityWithAI()",
+      "file_type": "code",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L369",
+      "id": "ai_services_checkavailabilitywithai",
+      "community": 3,
+      "norm_label": "checkavailabilitywithai()"
+    },
+    {
+      "label": "tools.ts",
+      "file_type": "code",
+      "source_file": "src/lib/ai/tools.ts",
+      "source_location": "L1",
+      "id": "src_lib_ai_tools_ts",
+      "community": 3,
+      "norm_label": "tools.ts"
+    },
+    {
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "src/lib/auth/auth.ts",
+      "source_location": "L1",
+      "id": "src_lib_auth_auth_ts",
+      "community": 39,
+      "norm_label": "auth.ts"
+    },
+    {
+      "label": "providers.ts",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L1",
+      "id": "src_lib_calendar_providers_ts",
+      "community": 3,
+      "norm_label": "providers.ts"
+    },
+    {
+      "label": "isTokenExpired()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L21",
+      "id": "calendar_providers_istokenexpired",
+      "community": 3,
+      "norm_label": "istokenexpired()"
+    },
+    {
+      "label": "refreshGoogleToken()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L26",
+      "id": "calendar_providers_refreshgoogletoken",
+      "community": 3,
+      "norm_label": "refreshgoogletoken()"
+    },
+    {
+      "label": "refreshMicrosoftToken()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L41",
+      "id": "calendar_providers_refreshmicrosofttoken",
+      "community": 3,
+      "norm_label": "refreshmicrosofttoken()"
+    },
+    {
+      "label": "GoogleCalendarProvider",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L68",
+      "id": "calendar_providers_googlecalendarprovider",
+      "community": 3,
+      "norm_label": "googlecalendarprovider"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L74",
+      "id": "calendar_providers_googlecalendarprovider_constructor",
+      "community": 3,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".getAvailability()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L107",
+      "id": "calendar_providers_googlecalendarprovider_getavailability",
+      "community": 3,
+      "norm_label": ".getavailability()"
+    },
+    {
+      "label": ".createEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L139",
+      "id": "calendar_providers_googlecalendarprovider_createevent",
+      "community": 3,
+      "norm_label": ".createevent()"
+    },
+    {
+      "label": ".deleteEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L172",
+      "id": "calendar_providers_googlecalendarprovider_deleteevent",
+      "community": 3,
+      "norm_label": ".deleteevent()"
+    },
+    {
+      "label": ".syncEvents()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L185",
+      "id": "calendar_providers_googlecalendarprovider_syncevents",
+      "community": 3,
+      "norm_label": ".syncevents()"
+    },
+    {
+      "label": "MicrosoftCalendarProvider",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L194",
+      "id": "calendar_providers_microsoftcalendarprovider",
+      "community": 9,
+      "norm_label": "microsoftcalendarprovider"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L200",
+      "id": "calendar_providers_microsoftcalendarprovider_constructor",
+      "community": 9,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".getAvailability()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L212",
+      "id": "calendar_providers_microsoftcalendarprovider_getavailability",
+      "community": 9,
+      "norm_label": ".getavailability()"
+    },
+    {
+      "label": ".createEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L246",
+      "id": "calendar_providers_microsoftcalendarprovider_createevent",
+      "community": 9,
+      "norm_label": ".createevent()"
+    },
+    {
+      "label": ".deleteEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L278",
+      "id": "calendar_providers_microsoftcalendarprovider_deleteevent",
+      "community": 9,
+      "norm_label": ".deleteevent()"
+    },
+    {
+      "label": ".syncEvents()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L287",
+      "id": "calendar_providers_microsoftcalendarprovider_syncevents",
+      "community": 9,
+      "norm_label": ".syncevents()"
+    },
+    {
+      "label": "getCalendarProvider()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L295",
+      "id": "calendar_providers_getcalendarprovider",
+      "community": 3,
+      "norm_label": "getcalendarprovider()"
+    },
+    {
+      "label": "getAllCalendarProviders()",
+      "file_type": "code",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L351",
+      "id": "calendar_providers_getallcalendarproviders",
+      "community": 3,
+      "norm_label": "getallcalendarproviders()"
+    },
+    {
+      "label": "audit-log-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/audit-log-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_audit_log_repository_ts",
+      "community": 2,
+      "norm_label": "audit-log-repository.ts"
+    },
+    {
+      "label": "createAuditLogEntry()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/audit-log-repository.ts",
+      "source_location": "L11",
+      "id": "repositories_audit_log_repository_createauditlogentry",
+      "community": 2,
+      "norm_label": "createauditlogentry()"
+    },
+    {
+      "label": "findAuditLogs()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/audit-log-repository.ts",
+      "source_location": "L23",
+      "id": "repositories_audit_log_repository_findauditlogs",
+      "community": 2,
+      "norm_label": "findauditlogs()"
+    },
+    {
+      "label": "connected-account-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_connected_account_repository_ts",
+      "community": 7,
+      "norm_label": "connected-account-repository.ts"
+    },
+    {
+      "label": "createConnectedAccount()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L25",
+      "id": "repositories_connected_account_repository_createconnectedaccount",
+      "community": 7,
+      "norm_label": "createconnectedaccount()"
+    },
+    {
+      "label": "findConnectedAccount()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L41",
+      "id": "repositories_connected_account_repository_findconnectedaccount",
+      "community": 7,
+      "norm_label": "findconnectedaccount()"
+    },
+    {
+      "label": "findConnectedAccounts()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L47",
+      "id": "repositories_connected_account_repository_findconnectedaccounts",
+      "community": 7,
+      "norm_label": "findconnectedaccounts()"
+    },
+    {
+      "label": "updateConnectedAccount()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L53",
+      "id": "repositories_connected_account_repository_updateconnectedaccount",
+      "community": 7,
+      "norm_label": "updateconnectedaccount()"
+    },
+    {
+      "label": "deleteConnectedAccount()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L64",
+      "id": "repositories_connected_account_repository_deleteconnectedaccount",
+      "community": 7,
+      "norm_label": "deleteconnectedaccount()"
+    },
+    {
+      "label": "upsertConnectedAccount()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L71",
+      "id": "repositories_connected_account_repository_upsertconnectedaccount",
+      "community": 7,
+      "norm_label": "upsertconnectedaccount()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/index.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_index_ts",
+      "community": 40,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "maintenance-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_maintenance_repository_ts",
+      "community": 6,
+      "norm_label": "maintenance-repository.ts"
+    },
+    {
+      "label": "createMaintenanceTicket()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L31",
+      "id": "repositories_maintenance_repository_createmaintenanceticket",
+      "community": 6,
+      "norm_label": "createmaintenanceticket()"
+    },
+    {
+      "label": "findMaintenanceTicketById()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L53",
+      "id": "repositories_maintenance_repository_findmaintenanceticketbyid",
+      "community": 6,
+      "norm_label": "findmaintenanceticketbyid()"
+    },
+    {
+      "label": "findMaintenanceTickets()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L65",
+      "id": "repositories_maintenance_repository_findmaintenancetickets",
+      "community": 6,
+      "norm_label": "findmaintenancetickets()"
+    },
+    {
+      "label": "updateMaintenanceTicket()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L120",
+      "id": "repositories_maintenance_repository_updatemaintenanceticket",
+      "community": 6,
+      "norm_label": "updatemaintenanceticket()"
+    },
+    {
+      "label": "deleteMaintenanceTicket()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L132",
+      "id": "repositories_maintenance_repository_deletemaintenanceticket",
+      "community": 6,
+      "norm_label": "deletemaintenanceticket()"
+    },
+    {
+      "label": "createTicketEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L136",
+      "id": "repositories_maintenance_repository_createticketevent",
+      "community": 6,
+      "norm_label": "createticketevent()"
+    },
+    {
+      "label": "findTicketEvents()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L154",
+      "id": "repositories_maintenance_repository_findticketevents",
+      "community": 6,
+      "norm_label": "findticketevents()"
+    },
+    {
+      "label": "property-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_property_repository_ts",
+      "community": 4,
+      "norm_label": "property-repository.ts"
+    },
+    {
+      "label": "createProperty()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L27",
+      "id": "repositories_property_repository_createproperty",
+      "community": 4,
+      "norm_label": "createproperty()"
+    },
+    {
+      "label": "findPropertyById()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L42",
+      "id": "repositories_property_repository_findpropertybyid",
+      "community": 4,
+      "norm_label": "findpropertybyid()"
+    },
+    {
+      "label": "findProperties()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L52",
+      "id": "repositories_property_repository_findproperties",
+      "community": 4,
+      "norm_label": "findproperties()"
+    },
+    {
+      "label": "updateProperty()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L84",
+      "id": "repositories_property_repository_updateproperty",
+      "community": 4,
+      "norm_label": "updateproperty()"
+    },
+    {
+      "label": "deleteProperty()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L92",
+      "id": "repositories_property_repository_deleteproperty",
+      "community": 4,
+      "norm_label": "deleteproperty()"
+    },
+    {
+      "label": "createUnit()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L126",
+      "id": "repositories_property_repository_createunit",
+      "community": 4,
+      "norm_label": "createunit()"
+    },
+    {
+      "label": "findUnitById()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L145",
+      "id": "repositories_property_repository_findunitbyid",
+      "community": 4,
+      "norm_label": "findunitbyid()"
+    },
+    {
+      "label": "findUnits()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L152",
+      "id": "repositories_property_repository_findunits",
+      "community": 4,
+      "norm_label": "findunits()"
+    },
+    {
+      "label": "updateUnit()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L186",
+      "id": "repositories_property_repository_updateunit",
+      "community": 4,
+      "norm_label": "updateunit()"
+    },
+    {
+      "label": "deleteUnit()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L194",
+      "id": "repositories_property_repository_deleteunit",
+      "community": 4,
+      "norm_label": "deleteunit()"
+    },
+    {
+      "label": "task-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_task_repository_ts",
+      "community": 8,
+      "norm_label": "task-repository.ts"
+    },
+    {
+      "label": "createTask()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L27",
+      "id": "repositories_task_repository_createtask",
+      "community": 8,
+      "norm_label": "createtask()"
+    },
+    {
+      "label": "findTaskById()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L46",
+      "id": "repositories_task_repository_findtaskbyid",
+      "community": 8,
+      "norm_label": "findtaskbyid()"
+    },
+    {
+      "label": "findTasks()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L56",
+      "id": "repositories_task_repository_findtasks",
+      "community": 8,
+      "norm_label": "findtasks()"
+    },
+    {
+      "label": "updateTask()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L98",
+      "id": "repositories_task_repository_updatetask",
+      "community": 8,
+      "norm_label": "updatetask()"
+    },
+    {
+      "label": "deleteTask()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L109",
+      "id": "repositories_task_repository_deletetask",
+      "community": 8,
+      "norm_label": "deletetask()"
+    },
+    {
+      "label": "markTaskComplete()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L113",
+      "id": "repositories_task_repository_marktaskcomplete",
+      "community": 8,
+      "norm_label": "marktaskcomplete()"
+    },
+    {
+      "label": "user-repository.ts",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L1",
+      "id": "src_lib_db_repositories_user_repository_ts",
+      "community": 5,
+      "norm_label": "user-repository.ts"
+    },
+    {
+      "label": "createUser()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L20",
+      "id": "repositories_user_repository_createuser",
+      "community": 5,
+      "norm_label": "createuser()"
+    },
+    {
+      "label": "findUserById()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L32",
+      "id": "repositories_user_repository_finduserbyid",
+      "community": 5,
+      "norm_label": "finduserbyid()"
+    },
+    {
+      "label": "findUserByEmail()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L46",
+      "id": "repositories_user_repository_finduserbyemail",
+      "community": 5,
+      "norm_label": "finduserbyemail()"
+    },
+    {
+      "label": "findUsers()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L53",
+      "id": "repositories_user_repository_findusers",
+      "community": 5,
+      "norm_label": "findusers()"
+    },
+    {
+      "label": "updateUser()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L84",
+      "id": "repositories_user_repository_updateuser",
+      "community": 5,
+      "norm_label": "updateuser()"
+    },
+    {
+      "label": "deleteUser()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L91",
+      "id": "repositories_user_repository_deleteuser",
+      "community": 5,
+      "norm_label": "deleteuser()"
+    },
+    {
+      "label": "updateUserRole()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L95",
+      "id": "repositories_user_repository_updateuserrole",
+      "community": 5,
+      "norm_label": "updateuserrole()"
+    },
+    {
+      "label": "findUsersByPropertyManager()",
+      "file_type": "code",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L102",
+      "id": "repositories_user_repository_findusersbypropertymanager",
+      "community": 5,
+      "norm_label": "findusersbypropertymanager()"
+    },
+    {
+      "label": "client.ts",
+      "file_type": "code",
+      "source_file": "src/lib/prisma/client.ts",
+      "source_location": "L1",
+      "id": "src_lib_prisma_client_ts",
+      "community": 41,
+      "norm_label": "client.ts"
+    },
+    {
+      "label": "setup.ts",
+      "file_type": "code",
+      "source_file": "src/test/setup.ts",
+      "source_location": "L1",
+      "id": "src_test_setup_ts",
+      "community": 42,
+      "norm_label": "setup.ts"
+    },
+    {
+      "label": "utils.test.ts",
+      "file_type": "code",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L1",
+      "id": "src_test_utils_test_ts",
+      "community": 1,
+      "norm_label": "utils.test.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "src/types/index.ts",
+      "source_location": "L1",
+      "id": "src_types_index_ts",
+      "community": 43,
+      "norm_label": "index.ts"
     }
   ],
-  "edges": [
-    { "from": "user", "to": "property", "label": "manages" },
-    { "from": "user", "to": "unit", "to": "unit", "label": "rents" },
-    { "from": "user", "to": "maintenance-ticket", "label": "creates" },
-    { "from": "user", "to": "task", "label": "assigned" },
-    { "from": "user", "to": "connected-account", "label": "has" },
-    { "from": "user", "to": "chat-message", "label": "sends" },
-    { "from": "property", "to": "unit", "label": "contains" },
-    { "from": "unit", "to": "maintenance-ticket", "label": "has" },
-    { "from": "maintenance-ticket", "to": "task", "label": "generates" },
-    { "from": "maintenance-ticket", "to": "chat-message", "label": "context" },
-    { "from": "auth", "to": "user", "label": "authenticates" },
-    { "from": "auth", "to": "connected-account", "label": "stores tokens" },
-    { "from": "calendar-service", "to": "connected-account", "label": "uses" },
-    { "from": "ai-tools", "to": "calendar-service", "label": "calls" },
-    { "from": "ai-tools", "to": "prisma-client", "label": "queries" },
-    { "from": "ai-services", "to": "ai-client", "label": "uses" },
-    { "from": "ai-services", "to": "calendar-service", "label": "uses" },
-    { "from": "chat-drawer", "to": "ai-tools", "label": "triggers" },
-    { "from": "dashboard", "to": "tickets", "label": "links" },
-    { "from": "dashboard", "to": "properties", "label": "links" },
-    { "from": "dashboard", "to": "calendar-page", "label": "links" },
-    { "from": "repositories", "to": "prisma-client", "label": "uses" }
-  ]
+  "links": [
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_layout_tsx",
+      "target": "app_providers_providers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_page_tsx",
+      "target": "app_page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/providers.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_providers_tsx",
+      "target": "app_providers_providers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(auth)/login/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_auth_login_page_tsx",
+      "target": "login_page_handleoauthsignin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(auth)/login/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_app_auth_login_page_tsx",
+      "target": "login_page_handlecredentialssignin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(auth)/register/page.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "src_app_auth_register_page_tsx",
+      "target": "register_page_handlechange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(auth)/register/page.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "src_app_auth_register_page_tsx",
+      "target": "register_page_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/layout.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_dashboard_layout_tsx",
+      "target": "dashboard_dashboard_layout_client_dashboardlayoutclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_dashboard_layout_tsx",
+      "target": "dashboard_layout_dashboardlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/calendar/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_calendar_page_tsx",
+      "target": "calendar_page_calendarpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/properties/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_properties_page_tsx",
+      "target": "properties_page_propertiespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_settings_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_settings_page_tsx",
+      "target": "settings_page_handleconnect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_settings_page_tsx",
+      "target": "settings_page_handledisconnect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/settings/page.tsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_settings_page_tsx",
+      "target": "settings_page_handlesync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_tickets_new_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_tickets_new_page_tsx",
+      "target": "new_page_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/new/page.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_tickets_new_page_tsx",
+      "target": "new_page_handlechange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_tickets_id_page_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(dashboard)/dashboard/tickets/[id]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app_dashboard_dashboard_tickets_id_page_tsx",
+      "target": "id_page_ticketdetailpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/ai/chat/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app_api_ai_chat_route_ts",
+      "target": "chat_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/register/route.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app_api_auth_register_route_ts",
+      "target": "register_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/settings/calendar/disconnect/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_api_settings_calendar_disconnect_route_ts",
+      "target": "disconnect_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/settings/calendar/sync/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_api_settings_calendar_sync_route_ts",
+      "target": "sync_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_route_ts",
+      "target": "tickets_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_route_ts",
+      "target": "tickets_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/tickets/route.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "tickets_route_post",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_id_route_ts",
+      "target": "id_route_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_id_route_ts",
+      "target": "id_route_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_id_route_ts",
+      "target": "id_route_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "id_route_patch",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/tickets/[id]/route.ts",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "id_route_delete",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/tickets/[id]/status/route.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app_api_tickets_id_status_route_ts",
+      "target": "status_route_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/api/tickets/[id]/status/route.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "status_route_patch",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/user/me/route.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app_api_user_me_route_ts",
+      "target": "me_route_patch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/webhooks/google/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_api_webhooks_google_route_ts",
+      "target": "google_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/webhooks/microsoft/route.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_api_webhooks_microsoft_route_ts",
+      "target": "microsoft_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/forgot-password/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_forgot_password_page_tsx",
+      "target": "forgot_password_page_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/onboarding/onboarding-form.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "src_app_onboarding_onboarding_form_tsx",
+      "target": "onboarding_onboarding_form_onboardingform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/onboarding/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_onboarding_page_tsx",
+      "target": "onboarding_onboarding_form_onboardingform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/onboarding/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_onboarding_page_tsx",
+      "target": "onboarding_page_onboardingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_privacy_page_tsx",
+      "target": "privacy_page_privacypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_chat_chat_drawer_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_chat_chat_drawer_tsx",
+      "target": "lib_utils_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "src_components_chat_chat_drawer_tsx",
+      "target": "chat_chat_drawer_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "src_components_chat_chat_drawer_tsx",
+      "target": "chat_chat_drawer_handlequickaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/chat/chat-drawer.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "chat_chat_drawer_handlequickaction",
+      "target": "chat_chat_drawer_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-filters.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_filters_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-filters.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_filters_tsx",
+      "target": "dashboard_calendar_filters_handleviewchange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_view_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_view_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_view_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_view_tsx",
+      "target": "dashboard_calendar_view_geteventsfordate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/calendar-view.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "src_components_dashboard_calendar_view_tsx",
+      "target": "dashboard_calendar_view_getmonthdays",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-header.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_header_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-header.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_header_tsx",
+      "target": "lib_utils_getinitials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-layout-client.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_layout_client_tsx",
+      "target": "dashboard_dashboard_layout_client_dashboardlayoutclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-sidebar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_sidebar_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-stats.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_stats_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/dashboard-stats.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_dashboard_dashboard_stats_tsx",
+      "target": "dashboard_dashboard_stats_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/properties-list.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_properties_list_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/properties-list.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_dashboard_properties_list_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/recent-tickets.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_recent_tickets_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/recent-tickets.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_recent_tickets_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "dashboard_ticket_detail_client_handlesave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "dashboard_ticket_detail_client_handlestatuschange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-detail-client.tsx",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_detail_client_tsx",
+      "target": "dashboard_ticket_detail_client_formatcost",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_filters_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_filters_tsx",
+      "target": "dashboard_ticket_filters_handlestatuschange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/ticket-filters.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "src_components_dashboard_ticket_filters_tsx",
+      "target": "dashboard_ticket_filters_handleprioritychange",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/tickets-list.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_tickets_list_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/tickets-list.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_tickets_list_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/tickets-list.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_dashboard_tickets_list_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/upcoming-tasks.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_upcoming_tasks_tsx",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/dashboard/upcoming-tasks.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_dashboard_upcoming_tasks_tsx",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/avatar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_ui_avatar_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/badge.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_ui_badge_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/button.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_ui_button_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/card.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_components_ui_card_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/dialog.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_ui_dialog_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/dropdown-menu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_ui_dropdown_menu_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/input.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_components_ui_input_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/label.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_ui_label_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/scroll-area.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_ui_scroll_area_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/select.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_ui_select_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/separator.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_ui_separator_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/switch.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_ui_switch_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/textarea.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_ui_textarea_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_getinitials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_truncate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/utils.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "src_lib_utils_ts",
+      "target": "lib_utils_classnames",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_formatdate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_formattime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_formatdatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_getinitials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/utils.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_test_utils_test_ts",
+      "target": "lib_utils_truncate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_lib_ai_client_ts",
+      "target": "ai_client_generatestructuredjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "src_lib_ai_client_ts",
+      "target": "ai_client_generatechatresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "src_lib_ai_client_ts",
+      "target": "ai_client_isaiconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/client.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "src_lib_ai_client_ts",
+      "target": "ai_client_getmodelname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_client_generatestructuredjson",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "ai_services_scoremaintenanceurgency",
+      "target": "ai_client_generatestructuredjson"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_client_isaiconfigured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "ai_services_scoremaintenanceurgency",
+      "target": "ai_client_isaiconfigured"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "calendar_providers_getcalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "calendar_providers_getallcalendarproviders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_buildurgencyprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_normalizeurgencyassessment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_scoremaintenanceurgency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_createmaintenanceticketwithai",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_schedulemaintenancevisitwithai",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_getdailyagendawithai",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L326",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_getticketdetailswithai",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L369",
+      "weight": 1.0,
+      "source": "src_lib_ai_services_ts",
+      "target": "ai_services_checkavailabilitywithai",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "ai_services_scoremaintenanceurgency",
+      "target": "ai_services_buildurgencyprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "ai_services_scoremaintenanceurgency",
+      "target": "ai_services_normalizeurgencyassessment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "ai_services_scoremaintenanceurgency",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L222",
+      "weight": 1.0,
+      "source": "ai_services_createmaintenanceticketwithai",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "ai_services_schedulemaintenancevisitwithai",
+      "target": "calendar_providers_getcalendarprovider"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L262",
+      "weight": 1.0,
+      "source": "ai_services_schedulemaintenancevisitwithai",
+      "target": "repositories_audit_log_repository_createauditlogentry"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "ai_services_getdailyagendawithai",
+      "target": "calendar_providers_getallcalendarproviders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L376",
+      "weight": 1.0,
+      "source": "ai_services_checkavailabilitywithai",
+      "target": "calendar_providers_getcalendarprovider"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/lib/ai/services.ts",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "ai_services_checkavailabilitywithai",
+      "target": "calendar_providers_getallcalendarproviders"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/tools.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_lib_ai_tools_ts",
+      "target": "calendar_providers_getcalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/ai/tools.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_lib_ai_tools_ts",
+      "target": "calendar_providers_getallcalendarproviders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_istokenexpired",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_refreshgoogletoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_refreshmicrosofttoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_googlecalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_microsoftcalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L295",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_getcalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L351",
+      "weight": 1.0,
+      "source": "src_lib_calendar_providers_ts",
+      "target": "calendar_providers_getallcalendarproviders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L311",
+      "weight": 1.0,
+      "source": "calendar_providers_getcalendarprovider",
+      "target": "calendar_providers_istokenexpired",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L315",
+      "weight": 1.0,
+      "source": "calendar_providers_getcalendarprovider",
+      "target": "calendar_providers_refreshgoogletoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L317",
+      "weight": 1.0,
+      "source": "calendar_providers_getcalendarprovider",
+      "target": "calendar_providers_refreshmicrosofttoken",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "calendar_providers_googlecalendarprovider",
+      "target": "calendar_providers_googlecalendarprovider_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "calendar_providers_googlecalendarprovider",
+      "target": "calendar_providers_googlecalendarprovider_getavailability",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "calendar_providers_googlecalendarprovider",
+      "target": "calendar_providers_googlecalendarprovider_createevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "calendar_providers_googlecalendarprovider",
+      "target": "calendar_providers_googlecalendarprovider_deleteevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "calendar_providers_googlecalendarprovider",
+      "target": "calendar_providers_googlecalendarprovider_syncevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "calendar_providers_microsoftcalendarprovider",
+      "target": "calendar_providers_microsoftcalendarprovider_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "calendar_providers_microsoftcalendarprovider",
+      "target": "calendar_providers_microsoftcalendarprovider_getavailability",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "calendar_providers_microsoftcalendarprovider",
+      "target": "calendar_providers_microsoftcalendarprovider_createevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L278",
+      "weight": 1.0,
+      "source": "calendar_providers_microsoftcalendarprovider",
+      "target": "calendar_providers_microsoftcalendarprovider_deleteevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L287",
+      "weight": 1.0,
+      "source": "calendar_providers_microsoftcalendarprovider",
+      "target": "calendar_providers_microsoftcalendarprovider_syncevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/calendar/providers.ts",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "calendar_providers_getallcalendarproviders",
+      "target": "calendar_providers_getcalendarprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/audit-log-repository.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_audit_log_repository_ts",
+      "target": "repositories_audit_log_repository_createauditlogentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/audit-log-repository.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_audit_log_repository_ts",
+      "target": "repositories_audit_log_repository_findauditlogs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_createconnectedaccount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_findconnectedaccount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_findconnectedaccounts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_updateconnectedaccount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_deleteconnectedaccount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/connected-account-repository.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_connected_account_repository_ts",
+      "target": "repositories_connected_account_repository_upsertconnectedaccount",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_createmaintenanceticket",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_findmaintenanceticketbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_findmaintenancetickets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_updatemaintenanceticket",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_deletemaintenanceticket",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_createticketevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/maintenance-repository.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_maintenance_repository_ts",
+      "target": "repositories_maintenance_repository_findticketevents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_createproperty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_findpropertybyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_findproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_updateproperty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_deleteproperty",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_createunit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_findunitbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_findunits",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_updateunit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/property-repository.ts",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_property_repository_ts",
+      "target": "repositories_property_repository_deleteunit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_createtask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_findtaskbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_findtasks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_updatetask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_deletetask",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/task-repository.ts",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_task_repository_ts",
+      "target": "repositories_task_repository_marktaskcomplete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_createuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_finduserbyid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_finduserbyemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_findusers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_updateuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_deleteuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_updateuserrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/db/repositories/user-repository.ts",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "src_lib_db_repositories_user_repository_ts",
+      "target": "repositories_user_repository_findusersbypropertymanager",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "589a1509fd226af55f1c2d21fa14c5353f5f6a00"
 }
