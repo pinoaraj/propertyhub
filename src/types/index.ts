@@ -1,4 +1,5 @@
-import { DefaultSession, DefaultUser } from 'next-auth';
+import { DefaultSession } from 'next-auth';
+import type { DefaultUser } from '@auth/core/types';
 import { JWT, DefaultJWT } from 'next-auth/jwt';
 
 declare module 'next-auth' {
@@ -135,6 +136,39 @@ export interface ToolResult {
   name: string;
   result: unknown;
   error?: string;
+}
+
+export interface Property {
+  id: string;
+  name: string;
+  address: string;
+  city: string;
+  state: string;
+  zipCode: string;
+  country: string;
+  description?: string;
+  managerId: string;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Unit {
+  id: string;
+  unitNumber: string;
+  propertyId: string;
+  tenantId?: string;
+  bedrooms: number;
+  bathrooms: number;
+  areaSqFt?: number;
+  rentAmount: number;
+  depositAmount?: number;
+  leaseStart?: Date;
+  leaseEnd?: Date;
+  isOccupied: boolean;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ConnectedAccount {

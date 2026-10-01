@@ -275,3 +275,18 @@ model ChatMessage {
   @@index([ticketId])
   @@map("chat_messages")
 }
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actor      String
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([actor])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
